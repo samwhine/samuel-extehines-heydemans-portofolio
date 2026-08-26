@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import TargetCursor from "@/components/TargetCursor";
 
 const SITE_URL = "https://samuel-extehines-heydemans.vercel.app";
 
@@ -49,7 +50,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <TargetCursor />
+        {children}
+      </body>
     </html>
   );
 }
