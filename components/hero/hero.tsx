@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { HeroCtas } from "./hero-ctas";
+import { HeroSocialLinks } from "./hero-social-links";
 import { FadeIn, ScaleUnblur } from "@/components/ui/motion-primitives";
 import { PortraitMorph } from "./portrait-morph";
 
@@ -26,18 +27,19 @@ export function Hero(): ReactNode {
 
             <h1 className="text-[2.75rem] font-medium leading-[1.05] tracking-tight text-foreground md:text-[2.5rem] lg:text-[3.65rem]">
               <span className="block whitespace-nowrap">
-                Video editor &
+                Creative staff &
               </span>
-              <span className="block whitespace-nowrap">music director</span>
+              <span className="block whitespace-nowrap">video editor</span>
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-              Creative staff at Legacy ID — editing artist content, running
-              the label&rsquo;s YouTube channel, and arranging worship music
-              on the side.
+              I manage YouTube channels, edit promo content for artists, and
+              handle the server infrastructure running behind the scenes —
+              plus music direction on the side.
             </p>
 
             <HeroCtas />
+            <HeroSocialLinks />
           </FadeIn>
 
           <ScaleUnblur className="flex justify-stretch md:justify-end">
@@ -46,7 +48,7 @@ export function Hero(): ReactNode {
                 <PortraitMorph
                   srcA={PORTRAIT_SRC}
                   srcB={PORTRAIT_HOVER_SRC}
-                  alt="Josh portrait"
+                  alt="Samuel Extehines Heydemans"
                 />
               </div>
             </div>

@@ -8,15 +8,19 @@ import {
   Wand2,
 } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/ui/motion-primitives";
 
+const BEHANCE_PROFILE_URL = "https://www.behance.net/samuel-e-heydemans";
+
 /**
- * No project screenshots are available yet, so cards render a labeled
- * placeholder panel instead of borrowing someone else's imagery. Add an
- * `image` field (and bring back next/image) once you have real
- * thumbnails for each piece.
+ * These covers are the actual project thumbnails from Behance, saved
+ * locally under /public/projects. Behance's API has been unavailable for
+ * new integrations since 2021 (and there's no reliable way to auto-sync),
+ * so when you publish something new on Behance: drop the new cover in
+ * /public/projects and add an entry below — that's the whole workflow.
  */
 
 type Project = {
@@ -27,6 +31,8 @@ type Project = {
   description: string;
   meta: string;
   href: string;
+  image: string;
+  imageAlt: string;
 };
 
 const PROJECTS: Project[] = [
@@ -37,8 +43,10 @@ const PROJECTS: Project[] = [
     title: "Professional editing for musician Ade Govinda's channel content.",
     description:
       "Cutting and pacing performance and promo footage for a working artist's release cycle.",
-    meta: "Video Editing",
+    meta: "Freelance · Video Editing",
     href: "https://www.behance.net/gallery/254775341/Ade-Govinda-(Professional-Editing)",
+    image: "/projects/ade-govinda.png",
+    imageAlt: "Ade Govinda (Professional Editing) cover",
   },
   {
     id: "nelly-syara",
@@ -49,26 +57,32 @@ const PROJECTS: Project[] = [
       "Fast, punchy comedic edits built for short-form attention spans without losing the joke.",
     meta: "Video Editing",
     href: "https://www.behance.net/gallery/254791715/Nelly-Syara-(MEME-Mentalilty-Funny-Editings)",
+    image: "/projects/nelly-syara.png",
+    imageAlt: "Nelly Syara (MEME, Mentality, Funny Editings) cover",
   },
   {
     id: "sidegigx",
     icon: Wand2,
     iconLabel: "Sidegigx",
-    title: "2D animation work for the Sidegigx project.",
+    title: "2D animation work for the Sidegigx freelance platform.",
     description:
-      "Motion and character animation produced end to end for a short-form 2D piece.",
-    meta: "2D Animation",
+      "Motion and character animation produced end to end for a short-form 2D piece, delivered as freelance work.",
+    meta: "Freelance · 2D Animation",
     href: "https://www.behance.net/gallery/254792361/Sidegigx-(2D-Animation)",
+    image: "/projects/sidegigx.png",
+    imageAlt: "Sidegigx (2D Animation) cover",
   },
   {
     id: "proctologyku",
     icon: Bot,
     iconLabel: "Proctologyku",
-    title: "2D animation for Proctologyku.",
+    title: "2D animation for Proctologyku, a proctologist's content brand.",
     description:
-      "Another 2D animation piece, focused on clean comedic timing and simple character motion.",
-    meta: "2D Animation",
+      "Comedic 2D animation for a doctor's personal content brand — clean timing, simple character motion.",
+    meta: "Freelance · 2D Animation",
     href: "https://www.behance.net/gallery/254792183/Proctologyku-(2D-Animation)",
+    image: "/projects/proctologyku.png",
+    imageAlt: "Proctologyku (2D Animation) cover",
   },
   {
     id: "tebar-pesona",
@@ -79,6 +93,8 @@ const PROJECTS: Project[] = [
       "Brand-forward promotional edit built to move quickly across social platforms.",
     meta: "Promotional Content",
     href: "https://www.behance.net/gallery/254792067/Tebar-Pesona-(Promotional-Content)",
+    image: "/projects/tebar-pesona.png",
+    imageAlt: "Tebar Pesona (Promotional Content) cover",
   },
   {
     id: "music-certificate",
@@ -89,6 +105,8 @@ const PROJECTS: Project[] = [
       "Documentation of arranging and music direction work delivered for a certificate project.",
     meta: "Music",
     href: "https://www.behance.net/gallery/254794941/Music-Certificate",
+    image: "/projects/music-certificate.png",
+    imageAlt: "Music Certificate cover",
   },
   {
     id: "server-admin",
@@ -99,6 +117,8 @@ const PROJECTS: Project[] = [
       "Running self-hosted file storage and Cloudflare Tunnel infrastructure that keeps the label's tools online.",
     meta: "Technical / IT",
     href: "https://www.behance.net/gallery/254816347/Server-Administration",
+    image: "/projects/server-admin.png",
+    imageAlt: "Server Administration cover",
   },
 ];
 
@@ -134,8 +154,8 @@ export function Projects({
           ))}
         </div>
 
-        {viewMoreVisible ? (
-          <div className="mt-12 flex justify-center sm:mt-16">
+        <div className="mt-12 flex flex-wrap justify-center gap-3 sm:mt-16">
+          {viewMoreVisible ? (
             <Link
               href="/projects"
               className="border border-foreground/8 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5"
@@ -146,8 +166,20 @@ export function Projects({
                 aria-hidden="true"
               />
             </Link>
-          </div>
-        ) : null}
+          ) : null}
+          <Link
+            href={BEHANCE_PROFILE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="border border-foreground/8 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          >
+            View full profile on Behance
+            <ArrowRight
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -182,14 +214,19 @@ function ProjectCard({
         </header>
 
         <div
-          className="project-card__image ring-foreground/5 relative flex w-full items-center justify-center overflow-hidden rounded-2xl bg-foreground/5 ring-1"
-          style={{ aspectRatio: 4 / 3 }}
+          className="project-card__image ring-foreground/5 relative w-full overflow-hidden rounded-2xl bg-foreground/5 ring-1"
+          style={{ aspectRatio: 808 / 632 }}
         >
-          <Icon
-            className="h-10 w-10 text-foreground/20"
-            strokeWidth={1.25}
-            aria-hidden="true"
-          />
+          <div className="project-card__image-inner">
+            <Image
+              src={project.image}
+              alt={project.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 540px, (min-width: 768px) 45vw, 100vw"
+              className="object-cover"
+              priority={index < 2}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col gap-2.5 px-1 pb-1">

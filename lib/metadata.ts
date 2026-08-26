@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "Samuel Extehines Heydemans",
   description:
-    "Video editor, YouTube channel manager, and music arranger based in Jakarta, working with Legacy ID.",
+    "Creative Staff & Video Editor working in the music industry — YouTube channel management, promo editing, and server infrastructure for Legacy ID.",
   url: "https://samuel-extehines-heydemans.vercel.app",
   ogImage: "/og-image.png",
   creator: "@samuelheydemans",
@@ -74,7 +74,6 @@ export const baseMetadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
     apple: "/apple-icon.png",
   },
   manifest: "/site.webmanifest",

@@ -2,7 +2,7 @@ import { Nav } from "@/components/layout/nav";
 import { PageBackdrop } from "@/components/layout/page-backdrop";
 import { Providers } from "@/components/layout/providers";
 import { SkipToContent } from "@/components/layout/skip-to-content";
-import { baseMetadata } from "@/lib/metadata";
+import { baseMetadata, siteConfig } from "@/lib/metadata";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
@@ -44,11 +44,31 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>): ReactNode {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    jobTitle: "Creative Staff & Video Editor",
+    description: siteConfig.description,
+    image: `${siteConfig.url}/photo.png`,
+    sameAs: [
+      "https://www.behance.net/samuel-e-heydemans",
+      "https://www.linkedin.com/in/samuel-extehines-heydemans/",
+      "https://instagram.com/samuelheydemans",
+    ],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
       >
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <Providers>
           <div className="site-frame site-frame--top" aria-hidden="true" />
           <div className="site-frame site-frame--left" aria-hidden="true" />

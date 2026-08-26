@@ -30,13 +30,13 @@ export default function AboutPage(): ReactNode {
             </h1>
             <div className="mt-8 space-y-6 text-[17px] leading-[1.7] tracking-tight text-foreground/75 sm:text-[18px]">
               <p>
-                I&rsquo;m a <strong className="font-semibold text-foreground">video editor and creative staff member at Legacy ID</strong>, where I cut promotional content for artists, manage the label&rsquo;s YouTube channel, and handle the <strong className="font-semibold text-foreground">server infrastructure</strong> running behind the scenes — file storage and Cloudflare Tunnel included.
+                I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. I manage YouTube channels, edit promotional content for artists, and help shape creative direction for talent under a record label.
               </p>
               <p>
-                Outside of that, I serve as <strong className="font-semibold text-foreground">Music Director</strong> at GMS Kelapa Gading, arranging worship music and playing piano, bass, and drums for the church&rsquo;s music ministry.
+                Outside of editing, I also serve as a <strong className="font-semibold text-foreground">Music Director</strong> — arranging worship music and playing piano, bass, and drums. On the technical side, I handle <strong className="font-semibold text-foreground">server infrastructure and admin work</strong> behind the scenes.
               </p>
               <p>
-                I&rsquo;m also studying <strong className="font-semibold text-foreground">Informatics Engineering</strong> at Universitas Mercu Buana (evening classes, alongside full-time creative work), and I build and self-host my own tools on the side — this site included.
+                Currently studying <strong className="font-semibold text-foreground">Informatics Engineering</strong> at Universitas Mercu Buana while working full-time in the creative field.
               </p>
             </div>
           </div>
