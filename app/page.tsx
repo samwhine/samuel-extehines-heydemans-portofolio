@@ -2,11 +2,13 @@ import Image from "next/image";
 import TimelineNav from "@/components/TimelineNav";
 import GlowOrb from "@/components/GlowOrb";
 import BlurText from "@/components/BlurText";
+import WarpText from "@/components/WarpText";
 import SpecularButton from "@/components/SpecularButton";
 import BorderGlow from "@/components/BorderGlow";
 import RotatingText from "@/components/RotatingText";
 import LogoLoop from "@/components/LogoLoop";
 import AccordionGallery from "@/components/AccordionGallery";
+import ScrollExpand from "@/components/ScrollExpand";
 
 const links = [
   { label: "Behance", href: "https://www.behance.net/samuel-e-heydemans" },
@@ -42,7 +44,7 @@ export default function Home() {
         <section className="relative mx-auto max-w-5xl px-6 pt-24 pb-32 md:pt-36 md:pb-48 text-center">
           <GlowOrb />
           <h1 className="font-display text-4xl md:text-6xl leading-[1.05]">
-            <BlurText text="Samuel Extehines Heydemans" />
+            <WarpText text="Samuel Extehines Heydemans" />
           </h1>
           <p className="mt-6 text-lg md:text-xl text-[var(--ink-dim)] max-w-xl mx-auto">
             Creative Staff &amp; Video Editor — also{" "}
@@ -73,6 +75,24 @@ export default function Home() {
 
         {/* LOGO LOOP */}
         <LogoLoop items={tools} />
+
+        {/* PORTRAIT — scroll-expand reveal */}
+        <section className="py-20 px-6 max-w-5xl mx-auto">
+          <ScrollExpand
+            minWidth="55%"
+            maxWidth="100%"
+            className="border border-[var(--line)] bg-[var(--card)]"
+          >
+            <Image
+              src="/photo.png"
+              alt="Samuel Extehines Heydemans"
+              width={365}
+              height={330}
+              className="w-full h-auto object-cover"
+              priority={false}
+            />
+          </ScrollExpand>
+        </section>
 
         {/* ABOUT */}
         <section id="about" className="mx-auto max-w-5xl px-6 py-20 border-b border-[var(--line)]">
