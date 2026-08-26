@@ -1,58 +1,69 @@
-import type { Metadata } from "next";
+import { Nav } from "@/components/layout/nav";
+import { PageBackdrop } from "@/components/layout/page-backdrop";
+import { Providers } from "@/components/layout/providers";
+import { SkipToContent } from "@/components/layout/skip-to-content";
+import { baseMetadata } from "@/lib/metadata";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import type { ReactNode } from "react";
 import "./globals.css";
-import TargetCursor from "@/components/TargetCursor";
 
-const SITE_URL = "https://samuel-extehines-heydemans.vercel.app";
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: "Samuel Extehines Heydemans — Video Editor & Creative Staff",
-  description:
-    "Portfolio of Samuel Extehines Heydemans — video editor, YouTube channel manager, and music arranger based in Jakarta, working with Legacy ID.",
-  keywords: [
-    "video editor",
-    "video editing portfolio",
-    "youtube channel manager",
-    "music arranger",
-    "creative staff Jakarta",
-    "Legacy ID",
-    "Samuel Heydemans",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  axes: ["opsz", "SOFT"],
+  display: "swap",
+});
+
+export const metadata: Metadata = baseMetadata;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
-  authors: [{ name: "Samuel Extehines Heydemans" }],
-  openGraph: {
-    title: "Samuel Extehines Heydemans",
-    description: "Video Editor · Creative Staff · Music Director",
-    url: SITE_URL,
-    siteName: "Samuel Extehines Heydemans",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Samuel Extehines Heydemans",
-    description: "Video Editor · Creative Staff · Music Director",
-    images: ["/opengraph-image"],
-  },
-  robots: { index: true, follow: true },
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: ReactNode;
+}>): ReactNode {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
-        <TargetCursor />
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
+      >
+        <Providers>
+          <div className="site-frame site-frame--top" aria-hidden="true" />
+          <div className="site-frame site-frame--left" aria-hidden="true" />
+          <div className="site-frame site-frame--right" aria-hidden="true" />
+          <svg className="site-corner site-corner--top-left" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5.50871e-06 0C-0.00788227 37.3001 8.99616 50.0116 50 50H5.50871e-06V0Z" fill="currentColor"/>
+          </svg>
+          <svg className="site-corner site-corner--top-right" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5.50871e-06 0C-0.00788227 37.3001 8.99616 50.0116 50 50H5.50871e-06V0Z" fill="currentColor"/>
+          </svg>
+          <SkipToContent />
+          <PageBackdrop />
+          <Nav />
+          {children}
+        </Providers>
       </body>
     </html>
   );
