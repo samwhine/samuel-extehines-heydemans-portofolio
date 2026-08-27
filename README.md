@@ -4,20 +4,16 @@
 
 Short-form editor & Creative Staff working in the music industry. I edit Reels/Shorts/TikTok content, manage YouTube channels, direct music, and handle the server infrastructure running behind the scenes — currently working with **Legacy ID** and its artists.
 
-**Live site:** [samuel-extehines-heydemans-portofolio.vercel.app](https://samuel-extehines-heydemans-portofolio.vercel.app)
-**Behance:** [behance.net/samuel-e-heydemans](https://www.behance.net/samuel-e-heydemans)
-**LinkedIn:** [linkedin.com/in/samuel-extehines-heydemans](https://www.linkedin.com/in/samuel-extehines-heydemans/)
-**Contact:** samuel.heydemanss@gmail.com
+- **Live site:** [samuel-extehines-heydemans-portofolio.vercel.app](https://samuel-extehines-heydemans-portofolio.vercel.app)
+- **Behance:** [behance.net/samuel-e-heydemans](https://www.behance.net/samuel-e-heydemans)
+- **LinkedIn:** [linkedin.com/in/samuel-extehines-heydemans](https://www.linkedin.com/in/samuel-extehines-heydemans/)
+- **Contact:** samuel.heydemanss@gmail.com
 
 ## About this repo
-
-[#about-this-repo](#about-this-repo)
 
 This is the source code for my personal portfolio site, built with Next.js and Tailwind CSS. It features a custom WebGL flow shader background, a magnetic morphing portrait, Lenis smooth scroll, and a minimal black-and-white design system.
 
 ## Features
-
-[#features](#features)
 
 - ✅ **Next.js** with App Router
 - ✅ **TypeScript** (strict mode)
@@ -38,8 +34,6 @@ This is the source code for my personal portfolio site, built with Next.js and T
 
 ## Sections
 
-[#sections](#sections)
-
 - **Nav** — Fixed pill nav with spring-animated active indicator and hydration-safe theme toggle
 - **Hero** — WebGL flow shader backdrop, headline, morphing portrait, magnetic CTAs
 - **About preview** — short excerpt on the homepage linking through to the full About page
@@ -48,8 +42,6 @@ This is the source code for my personal portfolio site, built with Next.js and T
 - **Contact Card** — Embedded shader, copy-to-clipboard email, secondary social CTAs
 
 ## Getting Started
-
-[#getting-started](#getting-started)
 
 ### Install dependencies
 
@@ -67,8 +59,6 @@ Open <http://localhost:3000> in your browser.
 
 ## Scripts
 
-[#scripts](#scripts)
-
 | Command                 | Description                    |
 | ------------------------ | ------------------------------- |
 | `npm run dev`            | Start development server        |
@@ -81,8 +71,6 @@ Open <http://localhost:3000> in your browser.
 | `npm run typecheck`      | Run TypeScript type checking    |
 
 ## Project Structure
-
-[#project-structure](#project-structure)
 
 ```
 ├── app/
@@ -142,16 +130,12 @@ Open <http://localhost:3000> in your browser.
 
 ## Content Workflow
 
-[#content-workflow](#content-workflow)
-
 Behance's API has been unavailable for new integrations since 2021, so project covers don't auto-sync. When publishing something new on Behance:
 
 1. Save the cover image to `public/projects/`
 2. Add an entry to the `PROJECTS` array in `components/projects/projects.tsx`
 
 ## Design System
-
-[#design-system](#design-system)
 
 ### Colors
 
@@ -171,8 +155,6 @@ The palette is strict black and white. No accent or semantic color hues are used
 
 ## Accessibility
 
-[#accessibility](#accessibility)
-
 - Skip-to-content link
 - Visible focus rings on all interactive elements
 - ARIA labels on toggles, social links, and the contact button
@@ -183,8 +165,6 @@ The palette is strict black and white. No accent or semantic color hues are used
 
 ## Performance
 
-[#performance](#performance)
-
 - WebGL context cleanup on unmount via `WEBGL_lose_context`
 - Single mount-once shader effect; uniforms updated via refs
 - Shaders pause when offscreen (`IntersectionObserver`) and on tab hide (`visibilitychange`)
@@ -194,8 +174,6 @@ The palette is strict black and white. No accent or semantic color hues are used
 - Edge-compatible runtime
 
 ## Connect
-
-[#connect](#connect)
 
 - 📧 [samuel.heydemanss@gmail.com](mailto:samuel.heydemanss@gmail.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/samuel-extehines-heydemans/)

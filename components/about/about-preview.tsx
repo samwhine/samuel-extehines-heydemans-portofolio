@@ -10,18 +10,27 @@ export function AboutPreview(): ReactNode {
         <FadeIn>
           <div className="rounded-4xl border border-foreground/5 bg-foreground/1.5 p-8 sm:p-12 dark:bg-foreground/3">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <p className="max-w-[46ch] text-[17px] leading-[1.6] tracking-tight text-foreground/75 sm:text-[18px]">
-                Currently a{" "}
+              <p className="max-w-[50ch] text-[17px] leading-[1.6] tracking-tight text-foreground/75 sm:text-[18px]">
+                At{" "}
                 <strong className="font-semibold text-foreground">
-                  Creative Staff &amp; Video Editor
-                </strong>{" "}
-                at Legacy ID, plus{" "}
+                  Legacy ID
+                </strong>
+                , I&rsquo;m the{" "}
+                <strong className="font-semibold text-foreground">
+                  Creative Staff, Video Editor &amp; YouTube Channel Manager
+                </strong>
+                , and I run{" "}
+                <strong className="font-semibold text-foreground">
+                  WELL Launcher
+                </strong>
+                , a self-built dashboard managing the office&rsquo;s
+                self-hosted servers and Cloudflare Tunnel infrastructure.
+                I&rsquo;m also{" "}
                 <strong className="font-semibold text-foreground">
                   Music Director
                 </strong>{" "}
-                at GMS Kelapa Gading. Studying Informatics Engineering while
-                working full-time — because good editing and good
-                infrastructure come from the same obsession with craft.
+                at GMS Kelapa Gading, and studying Informatics Engineering
+                while working full-time.
               </p>
 
               <Link
