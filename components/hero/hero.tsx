@@ -9,7 +9,7 @@ import { PortraitMorph } from "./portrait-morph";
 // image — swap PORTRAIT_HOVER_SRC for a second photo later to get the
 // full morph effect on hover.
 const PORTRAIT_SRC = "/photo.png";
-const PORTRAIT_HOVER_SRC = "/photo.png";
+const PORTRAIT_HOVER_SRC = "/photo-hover.png";
 
 export function Hero(): ReactNode {
   return (
