@@ -33,7 +33,7 @@ export default function AboutPage(): ReactNode {
                 I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. My main focus day-to-day is <strong className="font-semibold text-foreground">short-form editing for Reels, Shorts, and TikTok</strong>, on top of managing YouTube channels, editing promotional content for artists, and helping shape creative direction for talent under a record label.
               </p>
               <p>
-                Outside of editing, I also serve as a <strong className="font-semibold text-foreground">Music Director</strong> — arranging worship music and playing piano, bass, and drums. On the technical side, I built <strong className="font-semibold text-foreground">WELL Launcher</strong>, a self-hosted dashboard that runs the office&rsquo;s file servers and Cloudflare Tunnel infrastructure from one place.
+                Outside of editing, I also serve as a <strong className="font-semibold text-foreground">Music Director</strong> — arranging worship music and playing piano, bass, and drums. On the technical side, I manage <strong className="font-semibold text-foreground">the office&rsquo;s self-hosted servers and Cloudflare Tunnel infrastructure</strong> — I even built a custom dashboard to keep it all under control from one place.
               </p>
               <p>
                 Currently studying <strong className="font-semibold text-foreground">Informatics Engineering</strong> at Universitas Mercu Buana while working full-time in the creative field.

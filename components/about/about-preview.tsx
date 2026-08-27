@@ -21,11 +21,11 @@ export function AboutPreview(): ReactNode {
                 </strong>
                 , and I run{" "}
                 <strong className="font-semibold text-foreground">
-                  WELL Launcher
-                </strong>
-                , a self-built dashboard managing the office&rsquo;s
-                self-hosted servers and Cloudflare Tunnel infrastructure.
-                I&rsquo;m also{" "}
+                  the office&rsquo;s self-hosted servers and Cloudflare
+                  Tunnel infrastructure
+                </strong>{" "}
+                — including a custom dashboard I built to manage it all from
+                one place. I&rsquo;m also{" "}
                 <strong className="font-semibold text-foreground">
                   Music Director
                 </strong>{" "}

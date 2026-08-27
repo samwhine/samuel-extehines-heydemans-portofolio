@@ -112,9 +112,9 @@ const PROJECTS: Project[] = [
     id: "server-admin",
     icon: Server,
     iconLabel: "Server Admin",
-    title: "Building and running Legacy ID's self-hosted server infrastructure.",
+    title: "Managing and running Legacy ID's servers, end to end.",
     description:
-      "Built WELL Launcher, a Python + HTML dashboard that manages the office's FileBrowser instances and Cloudflare Tunnel setup across multiple servers from one place.",
+      "Handling the office's self-hosted servers and Cloudflare Tunnel setup — including building a custom dashboard to manage it all from one place.",
     meta: "Technical / Infrastructure",
     href: "https://www.behance.net/gallery/254816347/Server-Administration",
     image: "/projects/server-admin.png",
