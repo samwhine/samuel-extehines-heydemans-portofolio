@@ -61,8 +61,8 @@ function PolaroidCard({
       ref={ref}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      initial={{ opacity: 0, y: -120, rotate: photo.rotate }}
-      animate={{ opacity: 1, y: 0, rotate: photo.rotate }}
+      initial={{ opacity: 0, y: -120 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.9,
         delay: 0.05 + index * 0.08,
@@ -73,16 +73,18 @@ function PolaroidCard({
         y: ty,
         rotate: photo.rotate,
       }}
-      className="relative aspect-[3/4] w-[clamp(6rem,11vw,9rem)] shrink-0 overflow-hidden rounded-2xl border-6 border-neutral-300/40 bg-white p-1.5 dark:border-white/15 dark:bg-neutral-900"
+      className="relative aspect-[3/4] w-[clamp(6rem,11vw,9rem)] shrink-0"
     >
-      <div className="relative h-full w-full overflow-hidden rounded-xl">
-        <Image
-          src={photo.src}
-          alt={photo.alt}
-          fill
-          sizes="144px"
-          className="object-cover"
-        />
+      <div className="h-full w-full overflow-hidden rounded-2xl border-6 border-neutral-300/40 bg-white p-1.5 dark:border-white/15 dark:bg-neutral-900">
+        <div className="relative h-full w-full overflow-hidden rounded-xl">
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            sizes="144px"
+            className="object-cover"
+          />
+        </div>
       </div>
     </motion.div>
   );
