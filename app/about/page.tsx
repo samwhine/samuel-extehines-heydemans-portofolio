@@ -30,10 +30,10 @@ export default function AboutPage(): ReactNode {
             </h1>
             <div className="mt-8 space-y-6 text-[17px] leading-[1.7] tracking-tight text-foreground/75 sm:text-[18px]">
               <p>
-                I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. My main focus day-to-day is <strong className="font-semibold text-foreground">short-form editing for Reels, Shorts, and TikTok</strong>, on top of managing YouTube channels, editing promotional content for artists, and helping shape creative direction for talent under a record label.
+                I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. My main focus day-to-day is <strong className="font-semibold text-foreground">short-form editing for Reels, Shorts, and TikTok</strong>, on top of managing YouTube channels, editing promotional content for artists, and helping shape creative direction for talent under a record label. I also manage <strong className="font-semibold text-foreground">the office&rsquo;s self-hosted servers and Cloudflare Tunnel infrastructure</strong> — I even built a custom dashboard to keep it all under control from one place.
               </p>
               <p>
-                Outside of editing, I also serve as a <strong className="font-semibold text-foreground">Music Director</strong> — arranging worship music and playing piano, bass, and drums. On the technical side, I manage <strong className="font-semibold text-foreground">the office&rsquo;s self-hosted servers and Cloudflare Tunnel infrastructure</strong> — I even built a custom dashboard to keep it all under control from one place.
+                Outside of Legacy ID, I serve as a <strong className="font-semibold text-foreground">Music Director</strong> at GMS Kelapa Gading — arranging worship music and playing piano, bass, and drums.
               </p>
               <p>
                 Currently studying <strong className="font-semibold text-foreground">Informatics Engineering</strong> at Universitas Mercu Buana while working full-time in the creative field.
