@@ -98,7 +98,7 @@ export function createMetadata({
   const ogImage = image ?? siteConfig.ogImage;
 
   return {
-    title,
+    ...(title && { title }),
     description,
     alternates: {
       canonical: path,
