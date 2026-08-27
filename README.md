@@ -1,98 +1,207 @@
 # Samuel Extehines Heydemans — Portfolio
 
-Personal portfolio site for Samuel Extehines Heydemans — Creative Staff & short-form video editor (Reels, Shorts, TikTok) working in the music industry, plus YouTube channel management, music direction, and server administration for [Legacy ID](https://www.behance.net/samuel-e-heydemans).
+![Preview](public/og-image.png)
 
-**Live:** [samuel-extehines-heydemans-portofolio.vercel.app](https://samuel-extehines-heydemans-portofolio.vercel.app)
+Short-form editor & Creative Staff working in the music industry. I edit Reels/Shorts/TikTok content, manage YouTube channels, direct music, and handle the server infrastructure running behind the scenes — currently working with **Legacy ID** and its artists.
 
-Built on top of [rbp-portfolio](https://github.com/DavidHDev/rbp-portfolio) by David Haz — a Next.js template with a WebGL flow shader, morphing portrait, and Lenis smooth scroll — customized with real content, projects, and a couple of behavior changes (see [Customizations](#customizations-from-the-original-template) below).
+**Live site:** [samuel-extehines-heydemans-portofolio.vercel.app](https://samuel-extehines-heydemans-portofolio.vercel.app)
+**Behance:** [behance.net/samuel-e-heydemans](https://www.behance.net/samuel-e-heydemans)
+**LinkedIn:** [linkedin.com/in/samuel-extehines-heydemans](https://www.linkedin.com/in/samuel-extehines-heydemans/)
+**Contact:** samuel.heydemanss@gmail.com
 
-## Tech Stack
+## About this repo
 
-- **Next.js 16** (App Router) + **TypeScript**
-- **Tailwind CSS v4**
-- **motion/react** for animation, **Lenis** for smooth scroll
-- **next-themes** for light/dark toggle
-- Raw **WebGL** (OGL-style) flow shader for the background and contact card
-- **Matter.js** for the physics-driven tech stack chips
-- Deployed on **Vercel**
+[#about-this-repo](#about-this-repo)
+
+This is the source code for my personal portfolio site, built with Next.js and Tailwind CSS. It features a custom WebGL flow shader background, a magnetic morphing portrait, Lenis smooth scroll, and a minimal black-and-white design system.
+
+## Features
+
+[#features](#features)
+
+- ✅ **Next.js** with App Router
+- ✅ **TypeScript** (strict mode)
+- ✅ **Tailwind CSS v4** with token-driven theming
+- ✅ **Dark Mode** via next-themes (class-based) with view-transition reveal
+- ✅ **Motion** via motion/react with reduced-motion support
+- ✅ **WebGL Flow Shader** — aspect-correct circular fade baked into the fragment, theme-aware bg sync
+- ✅ **Lenis Smooth Scroll** with anchor-link integration
+- ✅ **Portrait Morph** — hover-driven image swap with magnetic cursor follow
+- ✅ **Polaroid Strip, Skills, Stack, Experience, Education** — co-located content sections for the `/about` route
+- ✅ **Physics-driven Stack** — draggable tech chips powered by Matter.js
+- ✅ **Projects Grid** — real project covers pulled from Behance, hover lift and image zoom
+- ✅ **Contact Card** — single-click copy email with hover content swap, embedded shader
+- ✅ **Animated Pill Nav** — spring-animated active indicator, hydration-safe theme toggle
+- ✅ **SEO Ready** — metadata, Open Graph, Twitter cards, sitemap, robots
+- ✅ **Accessibility** — skip links, focus rings, ARIA labels, `prefers-reduced-motion` guards
+- ✅ **Edge Compatible** — no Node-only APIs
+
+## Sections
+
+[#sections](#sections)
+
+- **Nav** — Fixed pill nav with spring-animated active indicator and hydration-safe theme toggle
+- **Hero** — WebGL flow shader backdrop, headline, morphing portrait, magnetic CTAs
+- **About preview** — short excerpt on the homepage linking through to the full About page
+- **Projects** — Grid of project cards with hover lift, image zoom, and links out to Behance
+- **About** — Polaroid strip, skills grid, interactive Matter.js stack chips, expandable experience timeline, education list
+- **Contact Card** — Embedded shader, copy-to-clipboard email, secondary social CTAs
 
 ## Getting Started
 
-\`\`\`bash
+[#getting-started](#getting-started)
+
+### Install dependencies
+
+```
 npm install
+```
+
+### Run development server
+
+```
 npm run dev
-\`\`\`
+```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open <http://localhost:3000> in your browser.
 
-| Command | Description |
-|---|---|
-| \`npm run dev\` | Start development server |
-| \`npm run build\` | Production build |
-| \`npm run start\` | Start production server |
-| \`npm run lint\` / \`lint:fix\` | ESLint |
-| \`npm run format\` / \`format:check\` | Prettier |
-| \`npm run typecheck\` | TypeScript check (\`tsc --noEmit\`) |
+## Scripts
+
+[#scripts](#scripts)
+
+| Command                 | Description                    |
+| ------------------------ | ------------------------------- |
+| `npm run dev`            | Start development server        |
+| `npm run build`          | Build for production            |
+| `npm run start`          | Start production server         |
+| `npm run lint`           | Run ESLint                      |
+| `npm run lint:fix`       | Fix ESLint errors               |
+| `npm run format`         | Format code with Prettier       |
+| `npm run format:check`   | Check code formatting           |
+| `npm run typecheck`      | Run TypeScript type checking    |
 
 ## Project Structure
 
-\`\`\`
+[#project-structure](#project-structure)
+
+```
 ├── app/
-│   ├── about/                 # /about — bio, polaroid strip, skills, stack, experience, education
-│   ├── projects/              # /projects — full work grid
-│   ├── page.tsx                # Home — hero, featured projects, contact card
-│   ├── layout.tsx              # Root layout, fonts, JSON-LD Person schema
-│   └── robots.ts / sitemap.ts  # SEO
+│   ├── about/                       # About route
+│   ├── projects/                    # Projects route
+│   ├── globals.css                  # Design tokens, frame, project-card styles
+│   ├── layout.tsx                   # Root layout with providers, nav, backdrop
+│   ├── page.tsx                     # Home page
+│   ├── robots.ts                    # Dynamic robots.txt
+│   ├── sitemap.ts                   # Dynamic sitemap
+│   ├── icon.svg                     # Favicon
+│   └── apple-icon.svg               # Apple touch icon
 ├── components/
-│   ├── hero/                   # Hero copy, CTAs, social links, portrait morph
-│   ├── projects/                # Project cards (real Behance covers, no stock images)
-│   ├── about/                   # Polaroid strip, skills, stack chips, experience, education
-│   ├── contact/                 # Contact button (mailto) + contact card
-│   ├── layout/                  # Nav, theme toggle, smooth scroll, page backdrop
-│   └── shaders/                 # WebGL flow shader
+│   ├── about/
+│   │   ├── about-preview.tsx        # Short About excerpt shown on the homepage
+│   │   ├── education.tsx            # Education list with bordered logo squares
+│   │   ├── experience.tsx           # Expandable timeline with fade-mask collapse
+│   │   ├── polaroid-strip.tsx       # Tilted polaroid photos with magnetic tilt
+│   │   ├── skills.tsx               # Skills grid
+│   │   └── stack.tsx                # Matter.js physics-driven tech chips
+│   ├── contact/
+│   │   ├── contact-button.tsx       # Click-to-copy email button
+│   │   ├── contact-card.tsx         # Shader-backed contact card
+│   │   └── contact-card-ctas.tsx    # Social CTAs
+│   ├── hero/
+│   │   ├── hero.tsx                 # Hero layout and copy
+│   │   ├── hero-ctas.tsx            # Magnetic primary/secondary CTAs
+│   │   ├── hero-social-links.tsx    # Social links under the hero copy
+│   │   └── portrait-morph.tsx       # Hover-swap portrait with magnetic follow
+│   ├── layout/
+│   │   ├── nav.tsx                  # Pill nav with theme toggle
+│   │   ├── page-backdrop.tsx        # Site-wide shader backdrop
+│   │   ├── providers.tsx            # Theme + smooth-scroll providers
+│   │   ├── skip-to-content.tsx      # Skip link for a11y
+│   │   └── smooth-scroll.tsx        # Lenis smooth-scroll wrapper
+│   ├── projects/
+│   │   └── projects.tsx             # Projects grid — covers saved locally under /public/projects
+│   ├── shaders/
+│   │   └── shader-flow.tsx          # WebGL flow shader (raw OGL)
+│   └── ui/
+│       ├── dotted-pattern.tsx       # Shared dotted texture
+│       └── motion-primitives.tsx    # FadeIn, ScaleUnblur entrance helpers
 ├── lib/
-│   └── metadata.ts              # siteConfig + SEO metadata helpers
+│   ├── config.ts                    # Site config
+│   ├── metadata.ts                  # SEO metadata utilities
+│   └── motion.tsx                   # Motion components & hooks
 └── public/
-    ├── photo.png                 # Portrait
-    ├── projects/                 # Real Behance project covers
-    ├── about/                    # Polaroid strip photos (about-1..6.jpeg)
-    └── og-image.png               # Open Graph / social share image
-\`\`\`
+    ├── about/                       # Polaroid strip photos
+    ├── logos/                       # Company/school logos for the Experience & Education lists
+    ├── projects/                    # Project cover images (synced manually from Behance)
+    ├── photo.png                    # Default portrait
+    ├── photo-hover.png              # Hover portrait
+    ├── og-image.png                 # Open Graph / preview image
+    ├── linkedin.svg                 # Social icon
+    └── site.webmanifest             # PWA manifest
+```
 
-## Customizations from the original template
+## Content Workflow
 
-Things that differ from the upstream \`rbp-portfolio\` template, in case this gets updated from upstream again later:
+[#content-workflow](#content-workflow)
 
-- **Theme defaults to light and doesn't persist across refreshes on purpose.** Most project covers are light/white images, so a saved dark preference makes the grid look inconsistent. The toggle in \`components/layout/nav.tsx\` still works within a session, but clears its own \`localStorage\` key (\`theme-v2\`) right after writing it, so every fresh page load falls back to \`defaultTheme="light"\` in \`components/layout/providers.tsx\`.
-- **Polaroid strip entrance animation has no \`filter: blur()\`.** The original animates \`opacity\`, \`y\`, and \`blur\` together on an element with \`rounded-2xl overflow-hidden\`. Mobile Safari has a known issue clipping rounded corners correctly while animating \`filter\` + \`transform\` on the same layer — corners could render square and the animation could stutter on phones. Removed the blur step; same fade/slide otherwise.
-- **Projects use real covers**, not template mockups — see \`public/projects/\`. \`components/projects/projects.tsx\` has a comment noting this.
-- **Stack chips** (\`components/about/stack.tsx\`) use real tools; a couple (CapCut, Ableton) don't have entries in [Simple Icons](https://simpleicons.org), so those use Google's favicon service (\`s2/favicons\`) instead of a broken image.
+Behance's API has been unavailable for new integrations since 2021, so project covers don't auto-sync. When publishing something new on Behance:
 
-## Updating Content
+1. Save the cover image to `public/projects/`
+2. Add an entry to the `PROJECTS` array in `components/projects/projects.tsx`
 
-Content is co-located in each component — no separate CMS/content folder.
+## Design System
 
-| What | Where |
-|---|---|
-| Site name, description, SEO, OG image path | \`lib/metadata.ts\` |
-| Hero headline/copy | \`components/hero/hero.tsx\` |
-| Social links (IG/Behance/LinkedIn) | \`components/hero/hero-social-links.tsx\`, \`components/contact/contact-card.tsx\` |
-| Contact email | \`components/contact/contact-button.tsx\`, \`components/contact/contact-card.tsx\` |
-| Projects | \`components/projects/projects.tsx\` (add a cover to \`public/projects/\` first) |
-| Bio | \`app/about/page.tsx\` |
-| Polaroid photos | \`components/about/polaroid-strip.tsx\` + \`public/about/\` |
-| Skills | \`components/about/skills.tsx\` |
-| Tools/stack chips | \`components/about/stack.tsx\` |
-| Experience / Education | \`components/about/experience.tsx\`, \`components/about/education.tsx\` |
+[#design-system](#design-system)
 
-**After changing \`lib/metadata.ts\`'s \`url\`, or moving to a custom domain:** the Open Graph image, canonical URLs, and JSON-LD in \`app/layout.tsx\` all key off \`siteConfig.url\` — one place to update.
+### Colors
 
-## SEO / Search
+- `--background` / `--foreground` — Page background and text
+- `--muted` / `--muted-foreground` — Subtle surfaces and secondary text
+- `--border` — Hairline rails and dividers
+- `--ring` — Focus rings
+- `--frame` — Site-frame color (matches `--background`)
 
-- \`app/robots.ts\` and \`app/sitemap.ts\` are dynamic and generated from \`siteConfig.url\`.
-- \`app/layout.tsx\` includes a \`Person\` JSON-LD block (name, job title, links to Behance/LinkedIn/Instagram) to help Google understand this is a personal profile page.
-- Being live and crawlable doesn't mean indexed immediately — submit the sitemap in [Google Search Console](https://search.google.com/search-console) and use "Request Indexing" on the homepage to speed that up.
+The palette is strict black and white. No accent or semantic color hues are used.
 
-## License
+### Typography
 
-Built on the [rbp-portfolio](https://github.com/DavidHDev/rbp-portfolio) template, which is free to use in personal and commercial projects (not for resale/redistribution as a template). All content, photos, and project details in this repo are personal to Samuel Extehines Heydemans.
+- **Sans:** Geist Sans
+- **Mono:** Geist Mono
+- **Serif:** Fraunces (used selectively for display headlines)
+
+## Accessibility
+
+[#accessibility](#accessibility)
+
+- Skip-to-content link
+- Visible focus rings on all interactive elements
+- ARIA labels on toggles, social links, and the contact button
+- `prefers-reduced-motion` guards on the theme toggle view-transition
+- Shaders pause when offscreen and on tab hide
+- Proper heading hierarchy (single `<h1>` per page)
+- WCAG 2.1 AA contrast compliance in both themes
+
+## Performance
+
+[#performance](#performance)
+
+- WebGL context cleanup on unmount via `WEBGL_lose_context`
+- Single mount-once shader effect; uniforms updated via refs
+- Shaders pause when offscreen (`IntersectionObserver`) and on tab hide (`visibilitychange`)
+- DPR capped to keep shading cost bounded on retina displays
+- Matter.js is dynamic-imported inside the stack section
+- Lenis smooth scroll runs on a single rAF loop
+- Edge-compatible runtime
+
+## Connect
+
+[#connect](#connect)
+
+- 📧 [samuel.heydemanss@gmail.com](mailto:samuel.heydemanss@gmail.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/samuel-extehines-heydemans/)
+- 🎨 [Behance](https://www.behance.net/samuel-e-heydemans)
+- 📷 [Instagram](https://instagram.com/samuelheydemans)
+
+---
+
+© 2026 Samuel Extehines Heydemans. Built with Next.js.
