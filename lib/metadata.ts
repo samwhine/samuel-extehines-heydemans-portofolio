@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "Samuel Extehines Heydemans",
   description:
-    "Creative Staff & Video Editor working in the music industry — YouTube channel management, promo editing, and server infrastructure for Legacy ID.",
-  url: "https://samuel-extehines-heydemans.vercel.app",
+    "Short-form editor & Creative Staff working in the music industry — Reels/Shorts/TikTok editing, YouTube channel management, and server infrastructure for Legacy ID.",
+  url: "https://samuel-extehines-heydemans-portofolio.vercel.app",
   ogImage: "/og-image.png",
   creator: "@samuelheydemans",
   authors: [
     {
       name: "Samuel Extehines Heydemans",
-      url: "https://samuel-extehines-heydemans.vercel.app",
+      url: "https://samuel-extehines-heydemans-portofolio.vercel.app",
     },
   ],
   keywords: [

@@ -49,7 +49,7 @@ export default function RootLayout({
     "@type": "Person",
     name: siteConfig.name,
     url: siteConfig.url,
-    jobTitle: "Creative Staff & Video Editor",
+    jobTitle: "Short-Form Editor & Creative Staff",
     description: siteConfig.description,
     image: `${siteConfig.url}/photo.png`,
     sameAs: [

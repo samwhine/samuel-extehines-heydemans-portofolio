@@ -27,15 +27,16 @@ export function Hero(): ReactNode {
 
             <h1 className="text-[2.75rem] font-medium leading-[1.05] tracking-tight text-foreground md:text-[2.5rem] lg:text-[3.65rem]">
               <span className="block whitespace-nowrap">
-                Creative staff &
+                Short-form editor &
               </span>
-              <span className="block whitespace-nowrap">video editor</span>
+              <span className="block whitespace-nowrap">creative staff</span>
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-              I manage YouTube channels, edit promo content for artists, and
-              handle the server infrastructure running behind the scenes —
-              plus music direction on the side.
+              I edit short-form content for Reels, Shorts &amp; TikTok,
+              manage
+              YouTube channels, and handle the server infrastructure running
+              behind the scenes — plus music direction on the side.
             </p>
 
             <HeroCtas />

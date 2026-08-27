@@ -30,7 +30,7 @@ export default function AboutPage(): ReactNode {
             </h1>
             <div className="mt-8 space-y-6 text-[17px] leading-[1.7] tracking-tight text-foreground/75 sm:text-[18px]">
               <p>
-                I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. I manage YouTube channels, edit promotional content for artists, and help shape creative direction for talent under a record label.
+                I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. My main focus day-to-day is <strong className="font-semibold text-foreground">short-form editing for Reels, Shorts, and TikTok</strong>, on top of managing YouTube channels, editing promotional content for artists, and helping shape creative direction for talent under a record label.
               </p>
               <p>
                 Outside of editing, I also serve as a <strong className="font-semibold text-foreground">Music Director</strong> — arranging worship music and playing piano, bass, and drums. On the technical side, I handle <strong className="font-semibold text-foreground">server infrastructure and admin work</strong> behind the scenes.

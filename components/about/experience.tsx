@@ -25,12 +25,6 @@ const ENTRIES: Entry[] = [
     period: "2023 – Present",
     brand: "#4FD1C5",
   },
-  {
-    company: "Universitas Mercu Buana",
-    role: "Informatics Engineering (evening classes)",
-    period: "2024 – Present",
-    brand: "#6C63FF",
-  },
 ];
 
 const COLLAPSED_COUNT = 2.5;
@@ -88,7 +82,7 @@ export function Experience(): ReactNode {
         </motion.div>
 
         <AnimatePresence>
-          {!open && (
+          {!open && hiddenCount > 0 && (
             <motion.div
               key="fade"
               initial={{ opacity: 0 }}

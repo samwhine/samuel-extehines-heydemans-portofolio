@@ -1,9 +1,11 @@
 import type { ReactNode } from "react";
 
 const SKILLS = [
+  "Short-Form Editing (Reels, Shorts & TikTok)",
   "Video Editing",
   "2D Animation",
   "YouTube Channel Management",
+  "Multimedia & Livestream Production (OBS)",
   "Music Arrangement",
   "Piano, Bass & Drums",
   "Server Administration",
