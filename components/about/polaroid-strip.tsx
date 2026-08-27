@@ -1,22 +1,23 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import Image from "next/image";
 import { useRef, useSyncExternalStore, type ReactNode } from "react";
-
-import { DottedPattern } from "@/components/ui/dotted-pattern";
 
 type Polaroid = {
   id: string;
   rotate: number;
+  src: string;
+  alt: string;
 };
 
 const PHOTOS: Polaroid[] = [
-  { id: "a", rotate: -8 },
-  { id: "b", rotate: 6 },
-  { id: "c", rotate: -4 },
-  { id: "d", rotate: 7 },
-  { id: "e", rotate: -6 },
-  { id: "f", rotate: 5 },
+  { id: "a", rotate: -8, src: "/about/about-1.jpeg", alt: "Producing on a MIDI keyboard" },
+  { id: "b", rotate: 6, src: "/about/about-2.jpeg", alt: "Server monitoring dashboard" },
+  { id: "c", rotate: -4, src: "/about/about-3.jpeg", alt: "Playing bass on stage" },
+  { id: "d", rotate: 7, src: "/about/about-4.jpeg", alt: "Working in Ableton with a friend" },
+  { id: "e", rotate: -6, src: "/about/about-5.jpeg", alt: "Playing acoustic guitar in a studio" },
+  { id: "f", rotate: 5, src: "/about/about-6.jpeg", alt: "Playing drums on stage" },
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -74,7 +75,15 @@ function PolaroidCard({
       }}
       className="relative aspect-[3/4] w-[clamp(6rem,11vw,9rem)] shrink-0 overflow-hidden rounded-2xl border-6 border-neutral-300/40 bg-white p-1.5 dark:border-white/15 dark:bg-neutral-900"
     >
-      <DottedPattern className="relative h-full w-full overflow-hidden rounded-xl" />
+      <div className="relative h-full w-full overflow-hidden rounded-xl">
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          fill
+          sizes="144px"
+          className="object-cover"
+        />
+      </div>
     </motion.div>
   );
 }

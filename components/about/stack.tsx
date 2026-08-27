@@ -5,26 +5,39 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type Chip = {
   label: string;
-  slug: string;
+  slug?: string;
   bg: string;
   fg: string;
   iconUrl?: string;
 };
 
 const CHIPS: Chip[] = [
-  {
-    label: "Premiere Pro",
-    slug: "adobepremierepro",
-    bg: "#00005B",
-    fg: "#ffffff",
-  },
-  { label: "CapCut", slug: "capcut", bg: "#000000", fg: "#ffffff" },
-  { label: "OBS Studio", slug: "obsstudio", bg: "#302E31", fg: "#ffffff" },
-  { label: "Ableton", slug: "abletonlive", bg: "#000000", fg: "#ffffff" },
   { label: "Next.js", slug: "nextdotjs", bg: "#1f1f1f", fg: "#ffffff" },
   { label: "TypeScript", slug: "typescript", bg: "#2F74C0", fg: "#ffffff" },
-  { label: "Cloudflare", slug: "cloudflare", bg: "#F38020", fg: "#ffffff" },
+  { label: "Python", slug: "python", bg: "#306998", fg: "#ffffff" },
+  { label: "Go", slug: "go", bg: "#00ADD8", fg: "#ffffff" },
+  { label: "Vue.js", slug: "vuedotjs", bg: "#42B883", fg: "#ffffff" },
+  {
+    label: "VS Code",
+    bg: "#007ACC",
+    fg: "#ffffff",
+    iconUrl: "https://www.google.com/s2/favicons?sz=128&domain=code.visualstudio.com",
+  },
   { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
+  { label: "Cloudflare", slug: "cloudflare", bg: "#F38020", fg: "#ffffff" },
+  { label: "OBS Studio", slug: "obsstudio", bg: "#302E31", fg: "#ffffff" },
+  {
+    label: "CapCut",
+    bg: "#000000",
+    fg: "#ffffff",
+    iconUrl: "https://www.google.com/s2/favicons?sz=128&domain=capcut.com",
+  },
+  {
+    label: "Ableton",
+    bg: "#000000",
+    fg: "#ffffff",
+    iconUrl: "https://www.google.com/s2/favicons?sz=128&domain=ableton.com",
+  },
 ];
 
 const CHIP_RADIUS = 14;

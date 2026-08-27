@@ -6,7 +6,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: "Creative Staff & Video Editor",
   description: siteConfig.description,
   path: "/",
 });
