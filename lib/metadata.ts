@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Samuel Extehines Heydemans",
+  name: "Samuel Extehines Heydemans - Portofolio",
   description:
     "Short-form editor & Creative Staff working in the music industry — Reels/Shorts/TikTok editing, YouTube channel management, and server infrastructure for Legacy ID.",
   url: "https://samuel-extehines-heydemans-portofolio.vercel.app",
@@ -21,6 +21,8 @@ export const siteConfig = {
     "creative staff Jakarta",
     "Legacy ID",
     "Samuel Heydemans",
+    "Samuel E Heydemans",
+    "Samuel Extehines Heydemans",
   ],
 } as const;
 
