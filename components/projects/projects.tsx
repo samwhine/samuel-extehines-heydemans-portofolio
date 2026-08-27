@@ -148,7 +148,7 @@ export function Projects({
           </FadeIn>
         ) : null}
 
-        <div className="columns-1 gap-6 md:columns-2 md:gap-7">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7">
           {items.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

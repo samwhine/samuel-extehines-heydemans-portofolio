@@ -15,7 +15,7 @@ export function AboutPreview(): ReactNode {
                 <strong className="font-semibold text-foreground">
                   Legacy ID
                 </strong>
-                , I&rsquo;m the{" "}
+                , I&rsquo;m entrusted as a{" "}
                 <strong className="font-semibold text-foreground">
                   Creative Staff, Video Editor &amp; YouTube Channel Manager
                 </strong>
@@ -25,7 +25,7 @@ export function AboutPreview(): ReactNode {
                   Tunnel infrastructure
                 </strong>{" "}
                 — including a custom dashboard I built to manage it all from
-                one place. I&rsquo;m also{" "}
+                one place. I&rsquo;m also a{" "}
                 <strong className="font-semibold text-foreground">
                   Music Director
                 </strong>{" "}
