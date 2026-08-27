@@ -5,6 +5,7 @@ type Entry = {
   degree: string;
   period: string;
   slug?: string;
+  logo?: string;
 };
 
 const ENTRIES: Entry[] = [
@@ -12,6 +13,7 @@ const ENTRIES: Entry[] = [
     school: "Universitas Mercu Buana",
     degree: "Informatics Engineering (Teknik Informatika)",
     period: "2024 – Present",
+    logo: "/logos/mercu-buana.png",
   },
 ];
 
@@ -58,7 +60,16 @@ function SchoolLogo({ entry }: { entry: Entry }): ReactNode {
       aria-hidden="true"
       style={{ borderRadius: 14 }}
     >
-      {entry.slug ? (
+      {entry.logo ? (
+        <img
+          src={entry.logo}
+          alt=""
+          width={32}
+          height={32}
+          className="h-8 w-8 object-contain"
+          draggable={false}
+        />
+      ) : entry.slug ? (
         <img
           src={`https://cdn.simpleicons.org/${entry.slug}`}
           alt=""
