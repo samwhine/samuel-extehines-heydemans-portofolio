@@ -24,6 +24,7 @@ const CHIPS: Chip[] = [
     iconUrl: "https://www.google.com/s2/favicons?sz=128&domain=code.visualstudio.com",
   },
   { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
+  { label: "Vercel", slug: "vercel", bg: "#000000", fg: "#ffffff" },
   { label: "Cloudflare", slug: "cloudflare", bg: "#F38020", fg: "#ffffff" },
   { label: "OBS Studio", slug: "obsstudio", bg: "#302E31", fg: "#ffffff" },
   {

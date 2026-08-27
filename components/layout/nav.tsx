@@ -38,6 +38,20 @@ function NavThemeToggle(): ReactNode {
   const { setTheme, resolvedTheme } = useTheme();
   const isDark = mounted && resolvedTheme === "dark";
 
+  // Theme choice is session-only by design: most of the project covers are
+  // white/light images, so a persisted dark preference makes them look
+  // patchy on return visits. We let people toggle freely, but every fresh
+  // page load (refresh, new tab) should always start from light — so we
+  // clear the persisted value right after next-themes writes it.
+  const forgetPersistedTheme = (): void => {
+    if (typeof window === "undefined") return;
+    // A short delay so this runs after next-themes' own effect writes the
+    // new value to localStorage — we want to erase it right after, not race it.
+    window.setTimeout(() => {
+      window.localStorage.removeItem("theme-v2");
+    }, 50);
+  };
+
   const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>): void => {
     const next = isDark ? "light" : "dark";
 
@@ -51,6 +65,7 @@ function NavThemeToggle(): ReactNode {
 
     if (!supportsViewTransitions || prefersReducedMotion) {
       setTheme(next);
+      forgetPersistedTheme();
       return;
     }
 
@@ -75,6 +90,7 @@ function NavThemeToggle(): ReactNode {
     transition.finished.finally(() => {
       delete root.dataset.themeAnim;
     });
+    forgetPersistedTheme();
   };
 
   return (

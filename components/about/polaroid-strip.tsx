@@ -16,7 +16,7 @@ const PHOTOS: Polaroid[] = [
   { id: "b", rotate: 6, src: "/about/about-2.jpeg", alt: "Server monitoring dashboard" },
   { id: "c", rotate: -4, src: "/about/about-3.jpeg", alt: "Playing bass on stage" },
   { id: "d", rotate: 7, src: "/about/about-4.jpeg", alt: "Working in Ableton with a friend" },
-  { id: "e", rotate: -6, src: "/about/about-5.jpeg", alt: "Playing acoustic guitar in a studio" },
+  { id: "e", rotate: -6, src: "/about/about-5.jpeg", alt: "Editing a short-form clip in CapCut" },
   { id: "f", rotate: 5, src: "/about/about-6.jpeg", alt: "Playing drums on stage" },
 ];
 
@@ -61,8 +61,8 @@ function PolaroidCard({
       ref={ref}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      initial={{ opacity: 0, y: -120, filter: "blur(18px)", rotate: photo.rotate }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)", rotate: photo.rotate }}
+      initial={{ opacity: 0, y: -120, rotate: photo.rotate }}
+      animate={{ opacity: 1, y: 0, rotate: photo.rotate }}
       transition={{
         duration: 0.9,
         delay: 0.05 + index * 0.08,
