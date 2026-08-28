@@ -1,7 +1,7 @@
 {
-  "name": "Your Site Name",
-  "short_name": "Site",
-  "description": "A modern, accessible landing page template built with Next.js, Tailwind CSS, and TypeScript.",
+  "name": "Samuel Extehines Heydemans - Portfolio",
+  "short_name": "Samuel Heydemans",
+  "description": "Creative Staff, Video Editor & YouTube Channel Manager at Legacy ID, and self-hosted server administrator.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
