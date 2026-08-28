@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { features } from "@/lib/config";
 
@@ -19,6 +20,9 @@ export function SmoothScroll({
 }: {
   children: ReactNode;
 }): ReactNode {
+  const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     if (!features.smoothScroll) return;
 
@@ -29,6 +33,7 @@ export function SmoothScroll({
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis(LENIS_OPTIONS);
+    lenisRef.current = lenis;
 
     function raf(time: number): void {
       lenis.raf(time);
@@ -58,8 +63,18 @@ export function SmoothScroll({
       document.removeEventListener("click", handleAnchorClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  // Lenis keeps its own internal scroll position and doesn't know about
+  // Next.js client-side route changes, so it stays wherever the previous
+  // page was scrolled to. Force it (and the native scroll) back to the
+  // top instantly whenever the path changes.
+  useEffect(() => {
+    lenisRef.current?.scrollTo(0, { immediate: true });
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return <>{children}</>;
 }
