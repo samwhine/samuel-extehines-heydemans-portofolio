@@ -1,30 +1,59 @@
+import { Education } from "@/components/about/education";
+import { Experience } from "@/components/about/experience";
+import { PolaroidStrip } from "@/components/about/polaroid-strip";
+import { Skills } from "@/components/about/skills";
+import { Stack } from "@/components/about/stack";
 import { ContactCard } from "@/components/contact/contact-card";
-import { Projects } from "@/components/projects/projects";
 import { FadeIn } from "@/components/ui/motion-primitives";
 import { createMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: "Projects",
-  description: "Selected work and case studies.",
-  path: "/projects",
+  title: "About",
+  description: "About me, background, and how to get in touch.",
+  path: "/about",
 });
 
-export default function ProjectsPage(): ReactNode {
+export default function AboutPage(): ReactNode {
   return (
     <main id="main-content" className="flex flex-1 flex-col">
-      <section className="mx-auto w-full max-w-275 px-6 pt-44 pb-16 sm:px-10 sm:pt-56 sm:pb-20">
-        <FadeIn className="flex flex-col items-center gap-5 text-center">
-          <h1 className="font-serif text-[2.75rem] font-medium leading-[1.05] tracking-tight text-foreground md:text-[3.25rem] lg:text-[3.75rem]">
-            My recent work
-          </h1>
-          <p className="max-w-[33ch] text-[20px] leading-[1.4] tracking-tight text-foreground/65 sm:text-[22px]">
-            Experiments, collaborations, and projects I&rsquo;m especially proud to have shipped.
-          </p>
+      <section className="mx-auto w-full max-w-312 pt-40 sm:pt-56">
+        <PolaroidStrip />
+      </section>
+
+      <section className="mx-auto w-full max-w-160 px-6 pt-20 pb-16 sm:px-10 sm:pt-28 sm:pb-24">
+        <FadeIn delay={0.5}>
+          <div className="rounded-4xl border border-foreground/5 bg-foreground/1.5 p-8 sm:p-12 dark:bg-foreground/3">
+            <h1 className="font-serif text-[1.75rem] font-medium tracking-tight text-foreground sm:text-[2rem]">
+              Hello! I&rsquo;m <span className="border-b border-foreground/30 pb-0.5">Samuel Extehines Heydemans</span>.
+            </h1>
+            <div className="mt-8 space-y-6 text-[17px] leading-[1.7] tracking-tight text-foreground/75 sm:text-[18px]">
+              <p>
+                I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. My main focus day-to-day is <strong className="font-semibold text-foreground">short-form editing for Reels, Shorts, and TikTok</strong>, on top of managing YouTube channels, editing promotional content for artists, and helping shape creative direction for talent under a record label. I also manage <strong className="font-semibold text-foreground">the office&rsquo;s self-hosted servers and Cloudflare Tunnel infrastructure</strong> — I even built a custom dashboard to keep it all under control from one place.
+              </p>
+              <p>
+                Outside of work, I serve as a <strong className="font-semibold text-foreground">Music Director</strong> at GMS Kelapa Gading — arranging worship music and playing keyboard, bass, and drums (mostly by ear, big love for jazz).
+              </p>
+              <p>
+                Currently studying <strong className="font-semibold text-foreground">Informatics Engineering</strong> at Universitas Mercu Buana while working full-time in the creative field.
+              </p>
+            </div>
+          </div>
         </FadeIn>
       </section>
-      <Projects />
+
+      <section className="mx-auto w-full max-w-[40rem] px-6 pb-20 sm:px-10 sm:pb-28">
+        <FadeIn delay={0.1}>
+          <div className="flex flex-col gap-10">
+            <Experience />
+            <Education />
+            <Skills />
+            <Stack />
+          </div>
+        </FadeIn>
+      </section>
+
       <ContactCard />
       <div className="h-12 sm:h-16" />
     </main>
