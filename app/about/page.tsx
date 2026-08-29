@@ -33,7 +33,7 @@ export default function AboutPage(): ReactNode {
                 I&rsquo;m Samuel, a <strong className="font-semibold text-foreground">Creative Staff and Video Editor</strong> working in the music industry. My main focus day-to-day is <strong className="font-semibold text-foreground">short-form editing for Reels, Shorts, and TikTok</strong>, on top of managing YouTube channels, editing promotional content for artists, and helping shape creative direction for talent under a record label. I also manage <strong className="font-semibold text-foreground">the office&rsquo;s self-hosted servers and Cloudflare Tunnel infrastructure</strong> — I even built a custom dashboard to keep it all under control from one place.
               </p>
               <p>
-                Outside of Legacy ID, I serve as a <strong className="font-semibold text-foreground">Music Director</strong> at GMS Kelapa Gading — arranging worship music and playing piano, bass, and drums.
+                Outside of work, I serve as a <strong className="font-semibold text-foreground">Music Director</strong> at GMS Kelapa Gading — arranging worship music and playing keyboard, bass, and drums (mostly by ear, big love for jazz).
               </p>
               <p>
                 Currently studying <strong className="font-semibold text-foreground">Informatics Engineering</strong> at Universitas Mercu Buana while working full-time in the creative field.
