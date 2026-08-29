@@ -104,8 +104,11 @@ export function createMetadata({
       canonical: path,
     },
     openGraph: {
+      type: "website",
+      locale: "en_US",
       title: title ?? siteConfig.name,
       description: description ?? siteConfig.description,
+      siteName: siteConfig.name,
       url,
       images: [
         {
