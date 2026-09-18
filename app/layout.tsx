@@ -47,7 +47,7 @@ export default function RootLayout({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: siteConfig.name,
+    name: "Samuel Extehines Heydemans",
     url: siteConfig.url,
     jobTitle: "Short-Form Editor & Creative Staff",
     description: siteConfig.description,
@@ -57,6 +57,18 @@ export default function RootLayout({
       "https://www.linkedin.com/in/samuel-extehines-heydemans/",
       "https://instagram.com/samuelheydemans",
     ],
+  };
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    author: {
+      "@type": "Person",
+      name: "Samuel Extehines Heydemans",
+      url: siteConfig.url,
+    },
   };
 
   return (
@@ -68,6 +80,11 @@ export default function RootLayout({
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Providers>
           <div className="site-frame site-frame--top" aria-hidden="true" />

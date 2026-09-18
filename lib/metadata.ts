@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Samuel Extehines Heydemans - Portofolio",
+  name: "Samuel Extehines Heydemans | Video Editor & Creative Staff",
   description:
-    "Short-form editor & Creative Staff working in the music industry — Reels/Shorts/TikTok editing, YouTube channel management, and server infrastructure for Legacy ID.",
+    "Samuel Extehines Heydemans is a short-form video editor and creative staff member specializing in Reels, Shorts, TikTok editing, YouTube channel management, and music creative direction.",
   url: "https://samuel-extehines-heydemans-portofolio.vercel.app",
   ogImage: "/og-image.png",
   creator: "@samuelheydemans",
@@ -15,7 +15,16 @@ export const siteConfig = {
   ],
   keywords: [
     "video editor",
+    "Samuel",
+    "Samuel Creative",
+    "Samuel editor",
+    "Samuel short form editing",
+    "short form video editor",
+    "short-form video editing",
     "video editing portfolio",
+    "Reels editor",
+    "TikTok editor",
+    "YouTube Shorts editor",
     "youtube channel manager",
     "music arranger",
     "creative staff Jakarta",

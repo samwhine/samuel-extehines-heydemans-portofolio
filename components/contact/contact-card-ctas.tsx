@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { ContactButton } from "./contact-button";
+import { RateCardButton } from "./rate-card-button";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -18,6 +19,7 @@ export function ContactCardCtas(): ReactNode {
         className="mt-2 flex flex-wrap items-center gap-3"
       >
         <ContactButton />
+        <RateCardButton />
 
         <motion.div
           layout

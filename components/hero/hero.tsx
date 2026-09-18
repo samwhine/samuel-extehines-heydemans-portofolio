@@ -33,10 +33,9 @@ export function Hero(): ReactNode {
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-              I edit short-form content for Reels, Shorts &amp; TikTok,
-              manage
-              YouTube channels, and handle the server infrastructure running
-              behind the scenes — plus music direction on the side.
+              I&rsquo;m Samuel, a short-form video editor and creative staff member.
+              I edit Reels, Shorts &amp; TikTok content, manage YouTube channels,
+              and support music projects behind the scenes.
             </p>
 
             <HeroCtas />
