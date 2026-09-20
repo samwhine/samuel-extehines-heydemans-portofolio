@@ -2,7 +2,6 @@ import {
   ArrowRight,
   Bot,
   Film,
-  Music,
   Server,
   Sparkles,
   Wand2,
@@ -103,19 +102,6 @@ const PROJECTS: Project[] = [
     imageAlt: "Tebar Pesona (Promotional Content) cover",
   },
   {
-    id: "music-certificate",
-    category: "creative",
-    icon: Music,
-    iconLabel: "Music Certificate",
-    title: "Music direction and arrangement credit work.",
-    description:
-      "Documentation of arranging and music direction work delivered for a certificate project.",
-    meta: "Music",
-    href: "https://www.behance.net/gallery/254794941/Music-Certificate",
-    image: "/projects/music-certificate.png",
-    imageAlt: "Music Certificate cover",
-  },
-  {
     id: "server-admin",
     category: "technical",
     icon: Server,
@@ -153,7 +139,7 @@ export function Projects({
               Selected creative work
             </h2>
             <p className="max-w-[33ch] text-[18px] leading-[1.45] tracking-tight text-foreground/65 sm:text-[20px]">
-              Video editing, animation, music direction, and promotional content for artists, brands, and social platforms.
+              Video editing, animation, and promotional content for artists, brands, and social platforms.
             </p>
           </FadeIn>
         ) : null}

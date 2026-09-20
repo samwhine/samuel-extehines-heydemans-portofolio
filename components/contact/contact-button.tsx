@@ -66,11 +66,11 @@ export function ContactButton(): ReactNode {
         <AnimatePresence>
           {isOpen ? (
             <motion.div
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, backdropFilter: shouldReduceMotion ? "blur(0px)" : "blur(0px)" }}
+              animate={{ opacity: 1, backdropFilter: shouldReduceMotion ? "blur(0px)" : "blur(12px)" }}
               exit={{ opacity: 0 }}
-              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.35, ease: "easeOut" }}
-              className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-foreground/[0.18] p-5 backdrop-blur-md sm:p-6"
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.48, ease: EASE }}
+              className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-foreground/[0.18] p-5 sm:p-6"
               role="presentation"
               onMouseDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false); }}
             >

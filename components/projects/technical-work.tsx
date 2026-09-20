@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowUpRight, Globe2, Server, Wrench } from "lucide-react";
+import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
 import { FadeIn } from "@/components/ui/motion-primitives";
@@ -52,11 +55,14 @@ export function TechnicalWork(): ReactNode {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {TECHNICAL_WORK.map(({ title, description, meta, href, label, icon: Icon }, index) => (
             <FadeIn key={title} delay={index * 0.06}>
-              <a
+              <motion.a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full min-h-64 flex-col rounded-3xl border border-foreground/8 bg-background p-6 transition-[border-color,transform,box-shadow] duration-500 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-2xl sm:p-7"
+                whileHover={{ y: -5 }}
+                whileTap={{ scale: 0.99 }}
+                transition={{ type: "spring", stiffness: 360, damping: 28, mass: 0.65 }}
+                className="group flex h-full min-h-64 flex-col rounded-3xl border border-foreground/8 bg-background p-6 transition-[border-color,box-shadow] duration-500 hover:border-foreground/20 hover:shadow-2xl sm:p-7"
               >
                 <span className="border-foreground/10 mb-8 inline-flex h-11 w-11 items-center justify-center rounded-2xl border bg-foreground/3 text-foreground/75 dark:bg-foreground/5">
                   <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
@@ -74,7 +80,7 @@ export function TechnicalWork(): ReactNode {
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
                 </div>
-              </a>
+              </motion.a>
             </FadeIn>
           ))}
         </div>

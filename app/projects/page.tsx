@@ -40,7 +40,7 @@ export default function ProjectsPage(): ReactNode {
               Made to be watched
             </h2>
             <p className="max-w-[46ch] text-[18px] leading-[1.45] tracking-tight text-foreground/65 sm:text-[20px]">
-              Video editing, animation, music direction, and promotional content for artists, brands, and social platforms.
+              Video editing, animation, and promotional content for artists, brands, and social platforms.
             </p>
           </FadeIn>
         </div>

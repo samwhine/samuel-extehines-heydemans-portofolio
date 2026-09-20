@@ -5,17 +5,13 @@ const SKILLS = [
   "Video Editing",
   "2D Animation",
   "YouTube Channel Management",
-  "Multimedia & Livestream Production (OBS)",
+  "Multimedia & Livestream Production",
   "Music Arrangement",
   "Piano, Bass & Drums",
   "Server Administration",
   "Self-Hosted Infrastructure",
   "Creative Technology",
   "Web Development",
-  "Next.js & TypeScript",
-  "Python",
-  "Cloudflare & Networking",
-  "WebRTC / Peer-to-Peer Systems",
 ];
 
 export function Skills(): ReactNode {
