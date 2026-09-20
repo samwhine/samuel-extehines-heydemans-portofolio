@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState, type ReactNode } from "react";
 
 type Entry = { company: string; role: string; period: string; slug?: string; logo?: string; brand?: string };
-const ENTRIES: Entry[] = [{ company: "Legacy ID", role: "Creative Staff / Editor / YouTube / Server Admin", period: "Apr 2024 – Present", logo: "/logos/legacy-id.png", brand: "#E8B75C" }, { company: "GMS Kelapa Gading", role: "Music Director & Worship Volunteer", period: "2023 – Present", logo: "/logos/gms.png", brand: "#4FD1C5" }];
+const ENTRIES: Entry[] = [{ company: "The House Works", role: "Co-founder & Creative Partner", period: "Present", brand: "#111111" }, { company: "Legacy ID", role: "Creative Staff / Editor / YouTube / Server Admin", period: "Apr 2024 – Present", logo: "/logos/legacy-id.png", brand: "#E8B75C" }, { company: "GMS Kelapa Gading", role: "Music Director & Worship Volunteer", period: "2023 – Present", logo: "/logos/gms.png", brand: "#4FD1C5" }];
 const COLLAPSED_COUNT = 2.5;
 const ROW_HEIGHT = 64;
 const ROW_GAP = 8;

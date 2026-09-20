@@ -25,17 +25,18 @@ export function Hero(): ReactNode {
               , I&rsquo;m Samuel
             </p>
 
+            <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-foreground/50">
+              Co-founder, The House Works
+            </p>
+
             <h1 className="text-[2.75rem] font-medium leading-[1.05] tracking-tight text-foreground md:text-[2.5rem] lg:text-[3.65rem]">
-              <span className="block whitespace-nowrap">
-                Short-form editor &
-              </span>
-              <span className="block whitespace-nowrap">creative staff</span>
+              <span className="block">Creative Technologist</span>
+              <span className="block">&amp; Video Editor</span>
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-              I&rsquo;m Samuel, a short-form video editor and creative staff member.
-              I edit Reels, Shorts &amp; TikTok content, manage YouTube channels,
-              and support music projects behind the scenes.
+              I&rsquo;m Samuel, a co-founder, video editor, and technical builder working
+              across creative production, web products, and self-hosted systems.
             </p>
 
             <HeroCtas />

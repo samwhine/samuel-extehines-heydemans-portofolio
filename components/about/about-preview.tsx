@@ -29,8 +29,16 @@ export function AboutPreview(): ReactNode {
                 <strong className="font-semibold text-foreground">
                   Music Director
                 </strong>{" "}
-                at GMS Kelapa Gading, and studying Informatics Engineering
-                while working full-time.
+                at GMS Kelapa Gading. I&rsquo;m also a co-founder of{" "}
+                <a
+                  href="https://thehouseworks.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-foreground underline decoration-foreground/25 underline-offset-4 transition-colors hover:decoration-foreground/70"
+                >
+                  The House Works
+                </a>, a new creative production business built with Stefanny
+                Simanjuntak, while studying Informatics Engineering.
               </p>
 
               <Link

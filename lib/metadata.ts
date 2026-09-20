@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Samuel Extehines Heydemans | Video Editor & Creative Staff",
+  name: "Samuel Extehines Heydemans — Co-founder, The House Works | Creative Technologist & Video Editor",
   description:
-    "Samuel Extehines Heydemans is a short-form video editor and creative staff member specializing in Reels, Shorts, TikTok editing, YouTube channel management, and music creative direction.",
+    "Samuel Extehines Heydemans is the co-founder of The House Works, a creative technologist, and a video editor and creative staff member at Legacy ID.",
   url: "https://samuel-extehines-heydemans-portofolio.vercel.app",
   ogImage: "/og-image.png",
   creator: "@samuelheydemans",
@@ -29,11 +29,16 @@ export const siteConfig = {
     "music arranger",
     "creative staff Jakarta",
     "Legacy ID",
+    "The House Works",
+    "The House Works founder",
+    "Samuel Extehines Heydemans The House Works",
     "Samuel Heydemans",
     "Samuel E Heydemans",
     "Samuel Extehines Heydemans",
   ],
 } as const;
+
+export const THE_HOUSE_WORKS_URL = "https://thehouseworks.vercel.app/";
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

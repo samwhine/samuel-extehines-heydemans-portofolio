@@ -2,7 +2,7 @@ import { Nav } from "@/components/layout/nav";
 import { PageBackdrop } from "@/components/layout/page-backdrop";
 import { Providers } from "@/components/layout/providers";
 import { SkipToContent } from "@/components/layout/skip-to-content";
-import { baseMetadata, siteConfig } from "@/lib/metadata";
+import { baseMetadata, siteConfig, THE_HOUSE_WORKS_URL } from "@/lib/metadata";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
@@ -49,9 +49,19 @@ export default function RootLayout({
     "@type": "Person",
     name: "Samuel Extehines Heydemans",
     url: siteConfig.url,
-    jobTitle: "Short-Form Editor & Creative Staff",
+    jobTitle: "Co-founder, The House Works | Creative Technologist & Video Editor",
     description: siteConfig.description,
     image: `${siteConfig.url}/samuel-extehines-heydemans-portrait.png`,
+    worksFor: {
+      "@type": "Organization",
+      name: "Legacy ID",
+    },
+    memberOf: {
+      "@type": "Organization",
+      name: "The House Works",
+      url: THE_HOUSE_WORKS_URL,
+      roleName: "Co-founder & Creative Partner",
+    },
     sameAs: [
       "https://www.behance.net/samuel-e-heydemans",
       "https://www.linkedin.com/in/samuel-extehines-heydemans/",
@@ -68,6 +78,11 @@ export default function RootLayout({
       "@type": "Person",
       name: "Samuel Extehines Heydemans",
       url: siteConfig.url,
+      memberOf: {
+        "@type": "Organization",
+        name: "The House Works",
+        url: THE_HOUSE_WORKS_URL,
+      },
     },
   };
 

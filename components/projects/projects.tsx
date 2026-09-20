@@ -25,6 +25,7 @@ const BEHANCE_PROFILE_URL = "https://www.behance.net/samuel-e-heydemans";
 
 type Project = {
   id: string;
+  category: "creative" | "technical";
   icon: ComponentType<{ className?: string; strokeWidth?: number }>;
   iconLabel: string;
   title: string;
@@ -38,6 +39,7 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     id: "ade-govinda",
+    category: "creative",
     icon: Film,
     iconLabel: "Ade Govinda",
     title: "Professional editing for musician Ade Govinda's channel content.",
@@ -50,6 +52,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "nelly-syara",
+    category: "creative",
     icon: Sparkles,
     iconLabel: "Nelly Syara",
     title: "Meme, mentality, and comedy-style edits for Nelly Syara.",
@@ -62,6 +65,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "sidegigx",
+    category: "creative",
     icon: Wand2,
     iconLabel: "Sidegigx",
     title: "2D animation work for the Sidegigx freelance platform.",
@@ -74,6 +78,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "proctologyku",
+    category: "creative",
     icon: Bot,
     iconLabel: "Proctologyku",
     title: "2D animation for Proctologyku, a proctologist's content brand.",
@@ -86,6 +91,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "tebar-pesona",
+    category: "creative",
     icon: Sparkles,
     iconLabel: "Tebar Pesona",
     title: "Promotional content for Tebar Pesona.",
@@ -98,6 +104,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "music-certificate",
+    category: "creative",
     icon: Music,
     iconLabel: "Music Certificate",
     title: "Music direction and arrangement credit work.",
@@ -110,6 +117,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "server-admin",
+    category: "technical",
     icon: Server,
     iconLabel: "Server Admin",
     title: "Managing and running Legacy ID's servers, end to end.",
@@ -125,13 +133,16 @@ const PROJECTS: Project[] = [
 export type ProjectsProps = {
   withHeadline?: boolean;
   viewMoreVisible?: boolean;
+  category?: Project["category"];
 };
 
 export function Projects({
   withHeadline = false,
   viewMoreVisible = false,
+  category = "creative",
 }: ProjectsProps): ReactNode {
-  const items = viewMoreVisible ? PROJECTS.slice(0, 4) : PROJECTS;
+  const filteredProjects = PROJECTS.filter((project) => project.category === category);
+  const items = viewMoreVisible ? filteredProjects.slice(0, 4) : filteredProjects;
 
   return (
     <section className="relative w-full">
@@ -139,11 +150,10 @@ export function Projects({
         {withHeadline ? (
           <FadeIn className="flex flex-col items-center gap-5 pt-12 pb-10 text-center sm:pt-20 sm:pb-14">
             <h2 className="font-serif text-[2.5rem] font-medium leading-[1.05] tracking-tight text-foreground md:text-[3rem] lg:text-[3.5rem]">
-              My work
+              Selected creative work
             </h2>
             <p className="max-w-[33ch] text-[18px] leading-[1.45] tracking-tight text-foreground/65 sm:text-[20px]">
-              Video editing, animation, and behind-the-scenes work for Legacy
-              ID and its artists.
+              Video editing, animation, music direction, and promotional content for artists, brands, and social platforms.
             </p>
           </FadeIn>
         ) : null}

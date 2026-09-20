@@ -10,7 +10,12 @@ const SKILLS = [
   "Piano, Bass & Drums",
   "Server Administration",
   "Self-Hosted Infrastructure",
+  "Creative Technology",
+  "Web Development",
   "Next.js & TypeScript",
+  "Python",
+  "Cloudflare & Networking",
+  "WebRTC / Peer-to-Peer Systems",
 ];
 
 export function Skills(): ReactNode {
