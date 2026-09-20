@@ -4,7 +4,7 @@ import { Instagram, Mail, MessageCircle, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const EMAIL = "samuel.heydemanss@gmail.com";
 const INSTAGRAM = "https://instagram.com/samuelheydemans";
@@ -40,7 +40,7 @@ export function ContactButton(): ReactNode {
     setIsMounted(true);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isOpen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -89,7 +89,7 @@ export function ContactButton(): ReactNode {
             <AnimatePresence>
               {isOpen ? (
                 <motion.div
-                  initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                  initial={{ opacity: 1, backdropFilter: "blur(0px)" }}
                   animate={{ opacity: 1, backdropFilter: "blur(6px)" }}
                   exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
