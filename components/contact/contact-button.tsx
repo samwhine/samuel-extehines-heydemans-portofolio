@@ -47,21 +47,27 @@ export function ContactButton(): ReactNode {
       if (event.key === "Escape") setIsOpen(false);
     };
 
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
+    const scrollY = window.scrollY;
     const previousOverflow = document.body.style.overflow;
     const previousPaddingRight = document.body.style.paddingRight;
+    const previousPosition = document.body.style.position;
+    const previousTop = document.body.style.top;
+    const previousWidth = document.body.style.width;
 
     document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
-    if (scrollbarWidth > 0) {
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-    }
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
       document.body.style.paddingRight = previousPaddingRight;
+      document.body.style.position = previousPosition;
+      document.body.style.top = previousTop;
+      document.body.style.width = previousWidth;
+      window.scrollTo(0, scrollY);
     };
   }, [isOpen]);
 
@@ -82,8 +88,12 @@ export function ContactButton(): ReactNode {
         ? createPortal(
             <AnimatePresence>
               {isOpen ? (
-                <div
-                  className="fixed inset-0 z-[10000] flex items-center justify-center bg-foreground/20 p-5 backdrop-blur-[6px]"
+                <motion.div
+                  initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                  animate={{ opacity: 1, backdropFilter: "blur(6px)" }}
+                  exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-foreground/20 p-5"
                   role="presentation"
                   onMouseDown={(event) => {
                     if (event.target === event.currentTarget) setIsOpen(false);
@@ -160,7 +170,7 @@ export function ContactButton(): ReactNode {
                       ))}
                     </div>
                   </motion.div>
-                </div>
+                </motion.div>
               ) : null}
             </AnimatePresence>,
             document.body,
