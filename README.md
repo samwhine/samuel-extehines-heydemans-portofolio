@@ -1,17 +1,19 @@
 # Samuel Extehines Heydemans — Portfolio
 
-![Preview](public/og-image.png)
+[![Portfolio preview](public/og-image.png)](https://samuel-extehines-heydemans-portofolio.vercel.app/)
 
-Short-form editor & Creative Staff working in the music industry. I edit Reels/Shorts/TikTok content, manage YouTube channels, direct music, and handle the server infrastructure running behind the scenes — currently working with **Legacy ID** and its artists.
+Personal portfolio of **Samuel Extehines Heydemans — Co-founder of The House Works and Creative Technologist** working across video editing, animation, web products, and self-hosted infrastructure.
 
-- **Live site:** [samuel-extehines-heydemans-portofolio.vercel.app](https://samuel-extehines-heydemans-portofolio.vercel.app)
+- **Live portfolio:** [samuel-extehines-heydemans-portofolio.vercel.app](https://samuel-extehines-heydemans-portofolio.vercel.app/)
+- **The House Works:** [thehouseworks.vercel.app](https://thehouseworks.vercel.app/)
 - **Behance:** [behance.net/samuel-e-heydemans](https://www.behance.net/samuel-e-heydemans)
 - **LinkedIn:** [linkedin.com/in/samuel-extehines-heydemans](https://www.linkedin.com/in/samuel-extehines-heydemans/)
-- **Contact:** samuel.heydemanss@gmail.com
+- **GitHub:** [github.com/samwhine](https://github.com/samwhine)
+- **Contact:** [samuel.heydemanss@gmail.com](mailto:samuel.heydemanss@gmail.com)
 
 ## About this repo
 
-This is the source code for my personal portfolio site, built with Next.js and Tailwind CSS. It features a custom WebGL flow shader background, a magnetic morphing portrait, Lenis smooth scroll, and a minimal black-and-white design system.
+This is the source code for my personal portfolio site, built with Next.js and Tailwind CSS. It presents two connected sides of my work: selected creative production and technical systems & infrastructure. The site features a custom WebGL flow shader background, a magnetic morphing portrait, Lenis smooth scroll, and a minimal black-and-white design system.
 
 ## Features
 
@@ -25,10 +27,10 @@ This is the source code for my personal portfolio site, built with Next.js and T
 - ✅ **Portrait Morph** — hover-driven image swap with magnetic cursor follow
 - ✅ **Polaroid Strip, Skills, Stack, Experience, Education** — co-located content sections for the `/about` route
 - ✅ **Physics-driven Stack** — draggable tech chips powered by Matter.js
-- ✅ **Projects Grid** — real project covers pulled from Behance, hover lift and image zoom
+- ✅ **Projects Grid** — locally synced project covers from Behance, hover lift and image zoom
 - ✅ **Contact Card** — single-click copy email with hover content swap, embedded shader
 - ✅ **Animated Pill Nav** — spring-animated active indicator, hydration-safe theme toggle
-- ✅ **SEO Ready** — metadata, Open Graph, Twitter cards, sitemap, robots
+- ✅ **SEO Ready** — metadata, Open Graph, Twitter cards, sitemap, robots, JSON-LD, and PWA assets
 - ✅ **Accessibility** — skip links, focus rings, ARIA labels, `prefers-reduced-motion` guards
 - ✅ **Edge Compatible** — no Node-only APIs
 
