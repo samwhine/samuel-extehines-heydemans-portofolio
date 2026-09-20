@@ -25,10 +25,16 @@ export function ContactButton(): ReactNode {
   const shouldReduceMotion = useReducedMotion();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const wasOpenRef = useRef(false);
 
   useEffect(() => {
-    if (isOpen) closeRef.current?.focus();
-    else if (isMounted) triggerRef.current?.focus({ preventScroll: true });
+    if (isOpen) {
+      wasOpenRef.current = true;
+      closeRef.current?.focus();
+    } else if (wasOpenRef.current && isMounted) {
+      triggerRef.current?.focus({ preventScroll: true });
+      wasOpenRef.current = false;
+    }
   }, [isOpen, isMounted]);
 
   useLayoutEffect(() => {
