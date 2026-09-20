@@ -1,5 +1,6 @@
 "use client";
 
+import NextImage from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { Renderer, Program, Mesh, Triangle, Transform, Texture } from "ogl";
@@ -310,9 +311,11 @@ export function PortraitMorph({
       style={{ position: "relative", width: "100%", height: "100%", filter: "grayscale(100%)" }}
     >
       {!ready ? (
-        <img
+        <NextImage
           src={srcA}
           alt={alt}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
           draggable={false}
           className="absolute inset-0 h-full w-full select-none object-cover"
         />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -110,7 +111,7 @@ function SocialIcon({
       ) : imageSrc ? (
         // Plain <img> here (not next/image) since this is a remote icon
         // from simpleicons.org and doesn't need the allowlist config.
-        <img
+        <Image
           src={imageSrc}
           alt=""
           width={14}

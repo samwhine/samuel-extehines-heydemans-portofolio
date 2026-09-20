@@ -8,8 +8,8 @@ import { PortraitMorph } from "./portrait-morph";
 // Only one portrait is available for now, so both slots point to the same
 // image — swap PORTRAIT_HOVER_SRC for a second photo later to get the
 // full morph effect on hover.
-const PORTRAIT_SRC = "/photo.png";
-const PORTRAIT_HOVER_SRC = "/photo-hover.png";
+const PORTRAIT_SRC = "/samuel-extehines-heydemans-portrait.png";
+const PORTRAIT_HOVER_SRC = "/samuel-extehines-heydemans-portrait-hover.png";
 
 export function Hero(): ReactNode {
   return (

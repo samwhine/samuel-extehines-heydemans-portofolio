@@ -1,4 +1,5 @@
 import { Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -43,7 +44,7 @@ export function HeroSocialLinks(): ReactNode {
             {Icon ? (
               <Icon className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden="true" />
             ) : link.imageSrc ? (
-              <img
+              <Image
                 src={link.imageSrc}
                 alt=""
                 width={14}

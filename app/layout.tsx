@@ -51,7 +51,7 @@ export default function RootLayout({
     url: siteConfig.url,
     jobTitle: "Short-Form Editor & Creative Staff",
     description: siteConfig.description,
-    image: `${siteConfig.url}/photo.png`,
+    image: `${siteConfig.url}/samuel-extehines-heydemans-portrait.png`,
     sameAs: [
       "https://www.behance.net/samuel-e-heydemans",
       "https://www.linkedin.com/in/samuel-extehines-heydemans/",
@@ -78,12 +78,10 @@ export default function RootLayout({
       >
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Providers>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
 import type { ReactNode } from "react";
@@ -89,9 +90,12 @@ export function RateCardButton(): ReactNode {
                 </button>
               </div>
               <div className="overflow-auto rounded-2xl border border-foreground/8 bg-muted">
-                <img
-                  src="/MonthlyVideoEditingRateCard.png"
+                <Image
+                  src="/samuel-monthly-video-editing-rate-card.png"
                   alt="Monthly video editing rate card"
+                  width={1600}
+                  height={1000}
+                  sizes="(max-width: 768px) 92vw, 960px"
                   className="mx-auto h-auto w-full object-contain"
                 />
               </div>

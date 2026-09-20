@@ -1,6 +1,7 @@
 "use client";
 
 import { RotateCcw } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type Chip = {
@@ -292,7 +293,7 @@ function ChipPill({ chip }: { chip: Chip }): ReactNode {
         style={{ borderRadius: `${ICON_RADIUS}px` }}
         aria-hidden="true"
       >
-        <img
+        <Image
           src={chip.iconUrl ?? `https://cdn.simpleicons.org/${chip.slug}`}
           alt=""
           width={18}

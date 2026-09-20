@@ -1,10 +1,10 @@
 "use client";
 
 import { Instagram, Mail, MessageCircle, X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { useLayoutEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 
 const EMAIL = "samuel.heydemanss@gmail.com";
 const INSTAGRAM = "https://instagram.com/samuelheydemans";
@@ -17,55 +17,86 @@ const contactOptions = [
 ] as const;
 
 const emptySubscribe = () => () => {};
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function ContactButton(): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
   const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const shouldReduceMotion = useReducedMotion();
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (isOpen) closeRef.current?.focus();
+    else if (isMounted) triggerRef.current?.focus({ preventScroll: true });
+  }, [isOpen, isMounted]);
 
   useLayoutEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setIsOpen(false); };
     const scrollY = window.scrollY;
-    const previousOverflow = document.body.style.overflow;
-    const previousPaddingRight = document.body.style.paddingRight;
-    const previousPosition = document.body.style.position;
-    const previousTop = document.body.style.top;
-    const previousWidth = document.body.style.width;
+    const previous = { overflow: document.body.style.overflow, paddingRight: document.body.style.paddingRight, position: document.body.style.position, top: document.body.style.top, width: document.body.style.width };
     document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
     document.body.style.position = "fixed";
     document.body.style.top = `-${scrollY}px`;
     document.body.style.width = "100%";
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-      document.body.style.paddingRight = previousPaddingRight;
-      document.body.style.position = previousPosition;
-      document.body.style.top = previousTop;
-      document.body.style.width = previousWidth;
+      document.body.style.overflow = previous.overflow;
+      document.body.style.paddingRight = previous.paddingRight;
+      document.body.style.position = previous.position;
+      document.body.style.top = previous.top;
+      document.body.style.width = previous.width;
       window.scrollTo(0, scrollY);
     };
   }, [isOpen]);
 
+  const modalTransition = shouldReduceMotion ? { duration: 0 } : { type: "spring" as const, stiffness: 280, damping: 26, mass: 0.8 };
+  const itemTransition = shouldReduceMotion ? { duration: 0 } : { duration: 0.48, ease: EASE };
+
   return (
     <>
-      <button type="button" onClick={() => setIsOpen(true)} className="focus-ring group inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl bg-foreground px-5 text-sm font-medium text-background transition-opacity hover:opacity-90" aria-haspopup="dialog" aria-expanded={isOpen}>
-        <Mail className="h-4 w-4 shrink-0" aria-hidden="true" /><span>Contact</span>
+      <button ref={triggerRef} type="button" onClick={() => setIsOpen(true)} className="focus-ring group inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl bg-foreground px-5 text-sm font-medium text-background transition-[opacity,transform] duration-300 hover:-translate-y-0.5 hover:opacity-90" aria-haspopup="dialog" aria-expanded={isOpen}>
+        <Mail className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-rotate-6" aria-hidden="true" /><span>Contact</span>
       </button>
       {isMounted ? createPortal(
         <AnimatePresence>
           {isOpen ? (
-            <motion.div initial={{ opacity: 1, backdropFilter: "blur(0px)" }} animate={{ opacity: 1, backdropFilter: "blur(6px)" }} exit={{ opacity: 0, backdropFilter: "blur(0px)" }} transition={{ duration: 0.3, ease: "easeOut" }} className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-foreground/20 p-5" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false); }}>
-              <motion.div initial={{ opacity: 0, y: 12, scale: 0.97, filter: "blur(4px)" }} animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }} exit={{ opacity: 0, y: 8, scale: 0.98, filter: "blur(3px)" }} transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }} className="relative w-full max-w-md overflow-hidden rounded-[1.75rem] border border-foreground/10 bg-background/95 p-6 text-foreground shadow-[0_24px_80px_-24px_rgb(0_0_0/0.35)] sm:p-8" role="dialog" aria-modal="true" aria-labelledby="contact-dialog-title">
-                <button type="button" onClick={() => setIsOpen(false)} className="focus-ring absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground/55 transition-colors hover:bg-foreground/5 hover:text-foreground" aria-label="Close contact options"><X className="h-4 w-4" aria-hidden="true" /></button>
-                <div className="pr-10"><p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/45">Get in touch</p><h2 id="contact-dialog-title" className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">Let&rsquo;s connect</h2><p className="mt-3 text-sm leading-relaxed text-foreground/60">Choose the channel that works best for you.</p></div>
-                <div className="mt-6 grid gap-3">
-                  {contactOptions.map(({ label, description, href, icon: Icon }, index) => (
-                    <motion.a key={label} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} transition={{ duration: 0.3, delay: 0.08 + index * 0.06, ease: [0.22, 1, 0.36, 1] }} href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noopener noreferrer"} onClick={() => setIsOpen(false)} className="focus-ring group flex items-center gap-4 rounded-2xl border border-foreground/10 bg-background px-4 py-3.5 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-foreground/[0.03]">
-                      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-foreground text-background"><Icon className="h-4 w-4" aria-hidden="true" /></span><span className="min-w-0"><span className="block text-sm font-medium">{label}</span><span className="block truncate text-xs text-foreground/55">{description}</span></span><span className="ml-auto text-foreground/35 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.35, ease: "easeOut" }}
+              className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-foreground/[0.18] p-5 backdrop-blur-md sm:p-6"
+              role="presentation"
+              onMouseDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false); }}
+            >
+              <motion.div aria-hidden="true" initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 0.55, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.9, ease: EASE }} className="pointer-events-none absolute h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.22),transparent_64%)] blur-3xl" />
+              <motion.div
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24, scale: shouldReduceMotion ? 1 : 0.94, filter: shouldReduceMotion ? "blur(0px)" : "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: shouldReduceMotion ? 0 : 12, scale: shouldReduceMotion ? 1 : 0.97, filter: shouldReduceMotion ? "blur(0px)" : "blur(5px)" }}
+                transition={modalTransition}
+                className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-foreground/12 bg-background/90 p-6 text-foreground shadow-[0_30px_100px_-28px_rgb(0_0_0/0.45)] backdrop-blur-2xl sm:p-8"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="contact-dialog-title"
+                aria-describedby="contact-dialog-description"
+              >
+                <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/25 to-transparent" />
+                <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-52 w-52 rounded-full bg-foreground/[0.045] blur-2xl" />
+                <button ref={closeRef} type="button" onClick={() => setIsOpen(false)} className="focus-ring absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground/50 transition-[background-color,color,transform] duration-300 hover:rotate-90 hover:bg-foreground/7 hover:text-foreground" aria-label="Close contact options"><X className="h-4 w-4" aria-hidden="true" /></button>
+                <motion.div initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }} animate={{ opacity: 1, y: 0 }} transition={itemTransition} className="relative pr-10"><p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/45"><span className="h-1.5 w-1.5 rounded-full bg-foreground/45" aria-hidden="true" />Get in touch</p><h2 id="contact-dialog-title" className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">Let&rsquo;s connect</h2><p id="contact-dialog-description" className="mt-3 text-sm leading-relaxed text-foreground/60">Have a project in mind? Choose the channel that works best for you.</p></motion.div>
+                <motion.div initial="hidden" animate="show" exit="hidden" variants={{ hidden: {}, show: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.07, delayChildren: shouldReduceMotion ? 0 : 0.12 } } }} className="relative mt-7 grid gap-3">
+                  {contactOptions.map(({ label, description, href, icon: Icon }) => (
+                    <motion.a key={label} variants={{ hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -10 }, show: { opacity: 1, x: 0 } }} transition={itemTransition} href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noopener noreferrer"} onClick={() => setIsOpen(false)} className="focus-ring group flex items-center gap-4 rounded-2xl border border-foreground/10 bg-background/70 px-4 py-3.5 transition-[border-color,background-color,transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-foreground/[0.035] hover:shadow-[0_12px_30px_-18px_rgb(0_0_0/0.4)]">
+                      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-foreground text-background transition-transform duration-300 group-hover:scale-105"><Icon className="h-4 w-4" aria-hidden="true" /></span><span className="min-w-0"><span className="block text-sm font-medium">{label}</span><span className="block truncate text-xs text-foreground/55">{description}</span></span><span className="ml-auto text-lg leading-none text-foreground/30 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-foreground/60" aria-hidden="true">&rarr;</span>
                     </motion.a>
                   ))}
-                </div>
+                </motion.div>
               </motion.div>
             </motion.div>
           ) : null}
