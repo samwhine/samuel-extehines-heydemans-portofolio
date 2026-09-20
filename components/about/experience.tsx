@@ -5,8 +5,8 @@ import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState, type ReactNode } from "react";
 
-type Entry = { company: string; role: string; period: string; slug?: string; logo?: string; brand?: string };
-const ENTRIES: Entry[] = [{ company: "The House Works", role: "Co-founder & Creative Partner", period: "Present", logo: "/logos/the-house-works-logo.png", brand: "#111111" }, { company: "Legacy ID", role: "Creative Staff / Editor / YouTube / Server Admin", period: "Apr 2024 – Present", logo: "/logos/legacy-id.png", brand: "#E8B75C" }, { company: "GMS Kelapa Gading", role: "Music Director & Worship Volunteer", period: "2023 – Present", logo: "/logos/gms.png", brand: "#4FD1C5" }];
+type Entry = { company: string; role: string; period: string; slug?: string; logo?: string; brand?: string; logoClassName?: string };
+const ENTRIES: Entry[] = [{ company: "The House Works", role: "Co-founder & Creative Partner", period: "Present", logo: "/logos/the-house-works-logo.png", brand: "#111111", logoClassName: "h-8 w-8" }, { company: "Legacy ID", role: "Creative Staff / Editor / YouTube / Server Admin", period: "Apr 2024 – Present", logo: "/logos/legacy-id.png", brand: "#E8B75C", logoClassName: "h-10 w-10" }, { company: "GMS Kelapa Gading", role: "Music Director & Worship Volunteer", period: "2023 – Present", logo: "/logos/gms.png", brand: "#4FD1C5", logoClassName: "h-10 w-10" }];
 const COLLAPSED_COUNT = 2.5;
 const ROW_HEIGHT = 64;
 const ROW_GAP = 8;
@@ -20,5 +20,5 @@ export function Experience(): ReactNode {
 
 function CompanyLogo({ entry }: { entry: Entry }): ReactNode {
   const initials = entry.company.charAt(0);
-  return <span className="ring-foreground/8 inline-flex h-12 w-12 shrink-0 items-center justify-center ring-1 dark:ring-white/10" aria-hidden="true" style={{ borderRadius: 14, backgroundColor: entry.brand ?? "#ffffff" }}>{entry.logo ? <Image src={entry.logo} alt="" width={32} height={32} sizes="32px" className="h-8 w-8 object-contain" draggable={false} /> : <span className="text-[18px] font-semibold tracking-tight text-white">{initials}</span>}</span>;
+  return <span className="ring-foreground/8 inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden ring-1 dark:ring-white/10" aria-hidden="true" style={{ borderRadius: 14, backgroundColor: entry.brand ?? "#ffffff" }}>{entry.logo ? <Image src={entry.logo} alt="" width={40} height={40} sizes="40px" className={entry.logoClassName ?? "h-8 w-8"} draggable={false} /> : <span className="text-[18px] font-semibold tracking-tight text-white">{initials}</span>}</span>;
 }
