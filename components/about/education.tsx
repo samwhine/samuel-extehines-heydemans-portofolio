@@ -11,5 +11,5 @@ export function Education(): ReactNode {
 
 function SchoolLogo({ entry }: { entry: Entry }): ReactNode {
   const initials = entry.school.charAt(0);
-  return <span className="border-foreground/15 inline-flex h-12 w-12 shrink-0 items-center justify-center border" aria-hidden="true" style={{ borderRadius: 14 }}>{entry.logo ? <Image src={entry.logo} alt="" width={32} height={32} sizes="32px" className="h-8 w-8 object-contain" draggable={false} /> : entry.slug ? <Image src={`https://cdn.simpleicons.org/${entry.slug}`} alt="" width={24} height={24} sizes="24px" className="h-6 w-6" draggable={false} /> : <span className="text-foreground/60 text-[18px] font-semibold tracking-tight">{initials}</span>}</span>;
+  return <span className="border-foreground/15 inline-flex h-12 w-12 shrink-0 items-center justify-center border" aria-hidden="true" style={{ borderRadius: 14 }}>{entry.logo ? <Image src={entry.logo} alt="" width={32} height={32} sizes="32px" className="h-8 w-8 object-contain" draggable={false} /> : <span className="text-foreground/60 text-[18px] font-semibold tracking-tight">{initials}</span>}</span>;
 }

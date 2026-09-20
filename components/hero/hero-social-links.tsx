@@ -19,7 +19,7 @@ const LINKS: SocialLink[] = [
   {
     label: "Behance",
     href: "https://www.behance.net/samuel-e-heydemans",
-    imageSrc: "https://cdn.simpleicons.org/behance",
+    imageSrc: "/icons/stack/behance.svg",
   },
   {
     label: "LinkedIn",

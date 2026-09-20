@@ -64,7 +64,7 @@ export function ContactCard(): ReactNode {
                   <SocialIcon
                     href="https://www.behance.net/samuel-e-heydemans"
                     label="Behance"
-                    imageSrc="https://cdn.simpleicons.org/behance"
+                    imageSrc="/icons/stack/behance.svg"
                   />
                 </div>
                 <div className="flex flex-col items-center gap-1 text-center">
@@ -109,8 +109,6 @@ function SocialIcon({
       {LucideIcon ? (
         <LucideIcon className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
       ) : imageSrc ? (
-        // Plain <img> here (not next/image) since this is a remote icon
-        // from simpleicons.org and doesn't need the allowlist config.
         <Image
           src={imageSrc}
           alt=""

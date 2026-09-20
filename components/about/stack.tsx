@@ -13,32 +13,32 @@ type Chip = {
 };
 
 const CHIPS: Chip[] = [
-  { label: "Next.js", slug: "nextdotjs", bg: "#1f1f1f", fg: "#ffffff" },
-  { label: "TypeScript", slug: "typescript", bg: "#2F74C0", fg: "#ffffff" },
-  { label: "Python", slug: "python", bg: "#306998", fg: "#ffffff" },
-  { label: "Go", slug: "go", bg: "#00ADD8", fg: "#ffffff" },
-  { label: "Vue.js", slug: "vuedotjs", bg: "#42B883", fg: "#ffffff" },
+  { label: "Next.js", bg: "#1f1f1f", fg: "#ffffff", iconUrl: "/icons/stack/nextjs.svg" },
+  { label: "TypeScript", bg: "#2F74C0", fg: "#ffffff", iconUrl: "/icons/stack/typescript.svg" },
+  { label: "Python", bg: "#306998", fg: "#ffffff", iconUrl: "/icons/stack/python.svg" },
+  { label: "Go", bg: "#00ADD8", fg: "#ffffff", iconUrl: "/icons/stack/go.svg" },
+  { label: "Vue.js", bg: "#42B883", fg: "#ffffff", iconUrl: "/icons/stack/vuejs.svg" },
   {
     label: "VS Code",
     bg: "#007ACC",
     fg: "#ffffff",
-    iconUrl: "https://www.google.com/s2/favicons?sz=128&domain=code.visualstudio.com",
+    iconUrl: "/icons/stack/visual-studio-code.svg",
   },
-  { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
-  { label: "Vercel", slug: "vercel", bg: "#000000", fg: "#ffffff" },
-  { label: "Cloudflare", slug: "cloudflare", bg: "#F38020", fg: "#ffffff" },
-  { label: "OBS Studio", slug: "obsstudio", bg: "#302E31", fg: "#ffffff" },
+  { label: "GitHub", bg: "#181717", fg: "#ffffff", iconUrl: "/icons/stack/github.svg" },
+  { label: "Vercel", bg: "#000000", fg: "#ffffff", iconUrl: "/icons/stack/vercel.svg" },
+  { label: "Cloudflare", bg: "#F38020", fg: "#ffffff", iconUrl: "/icons/stack/cloudflare.svg" },
+  { label: "OBS Studio", bg: "#302E31", fg: "#ffffff", iconUrl: "/icons/stack/obs-studio.svg" },
   {
     label: "CapCut",
     bg: "#000000",
     fg: "#ffffff",
-    iconUrl: "https://www.google.com/s2/favicons?sz=128&domain=capcut.com",
+    iconUrl: "/icons/stack/capcut.svg",
   },
   {
     label: "Ableton",
     bg: "#000000",
     fg: "#ffffff",
-    iconUrl: "https://www.google.com/s2/favicons?sz=128&domain=ableton.com",
+    iconUrl: "/icons/stack/ableton.svg",
   },
 ];
 
@@ -293,14 +293,7 @@ function ChipPill({ chip }: { chip: Chip }): ReactNode {
         style={{ borderRadius: `${ICON_RADIUS}px` }}
         aria-hidden="true"
       >
-        <Image
-          src={chip.iconUrl ?? `https://cdn.simpleicons.org/${chip.slug}`}
-          alt=""
-          width={18}
-          height={18}
-          className="h-5 w-5"
-          draggable={false}
-        />
+        {chip.iconUrl ? <Image src={chip.iconUrl} alt="" width={18} height={18} className="h-5 w-5" draggable={false} /> : <span aria-hidden="true" className="text-xs font-bold">{chip.label.charAt(0)}</span>}
       </span>
       <span>{chip.label}</span>
     </div>

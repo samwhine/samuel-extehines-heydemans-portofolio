@@ -20,5 +20,5 @@ export function Experience(): ReactNode {
 
 function CompanyLogo({ entry }: { entry: Entry }): ReactNode {
   const initials = entry.company.charAt(0);
-  return <span className="ring-foreground/8 inline-flex h-12 w-12 shrink-0 items-center justify-center bg-white ring-1 dark:ring-white/10" aria-hidden="true" style={{ borderRadius: 14, ...(entry.logo || entry.slug ? {} : { backgroundColor: entry.brand }) }}>{entry.logo ? <Image src={entry.logo} alt="" width={32} height={32} sizes="32px" className="h-8 w-8 object-contain" draggable={false} /> : entry.slug ? <Image src={`https://cdn.simpleicons.org/${entry.slug}`} alt="" width={24} height={24} sizes="24px" className="h-6 w-6" draggable={false} /> : <span className="text-[18px] font-semibold tracking-tight text-white">{initials}</span>}</span>;
+  return <span className="ring-foreground/8 inline-flex h-12 w-12 shrink-0 items-center justify-center bg-white ring-1 dark:ring-white/10" aria-hidden="true" style={{ borderRadius: 14, ...(entry.logo ? {} : { backgroundColor: entry.brand }) }}>{entry.logo ? <Image src={entry.logo} alt="" width={32} height={32} sizes="32px" className="h-8 w-8 object-contain" draggable={false} /> : <span className="text-[18px] font-semibold tracking-tight text-white">{initials}</span>}</span>;
 }
