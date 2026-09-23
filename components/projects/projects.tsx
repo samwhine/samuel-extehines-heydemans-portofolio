@@ -30,12 +30,12 @@ type Project = {
   title: string;
   description: string;
   meta: string;
-  behanceHref: string;
+  href: string;
   image: string;
   imageAlt: string;
 };
 
-export const PROJECTS: Project[] = [
+const PROJECTS: Project[] = [
   {
     id: "ade-govinda",
     category: "creative",
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     description:
       "Cutting and pacing performance and promo footage for a working artist's release cycle.",
     meta: "Freelance · Video Editing",
-    behanceHref: "https://www.behance.net/gallery/254775341/Ade-Govinda-(Professional-Editing)",
+    href: "https://www.behance.net/gallery/254775341/Ade-Govinda-(Professional-Editing)",
     image: "/projects/ade-govinda.png",
     imageAlt: "Ade Govinda (Professional Editing) cover",
   },
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
     description:
       "Fast, punchy comedic edits built for short-form attention spans without losing the joke.",
     meta: "Video Editing",
-    behanceHref: "https://www.behance.net/gallery/254791715/Nelly-Syara-(MEME-Mentalilty-Funny-Editings)",
+    href: "https://www.behance.net/gallery/254791715/Nelly-Syara-(MEME-Mentalilty-Funny-Editings)",
     image: "/projects/nelly-syara.png",
     imageAlt: "Nelly Syara (MEME, Mentality, Funny Editings) cover",
   },
@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
     description:
       "Motion and character animation produced end to end for a short-form 2D piece, delivered as freelance work.",
     meta: "Freelance · 2D Animation",
-    behanceHref: "https://www.behance.net/gallery/254792361/Sidegigx-(2D-Animation)",
+    href: "https://www.behance.net/gallery/254792361/Sidegigx-(2D-Animation)",
     image: "/projects/sidegigx.png",
     imageAlt: "Sidegigx (2D Animation) cover",
   },
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
     description:
       "Comedic 2D animation for a doctor's personal content brand — clean timing, simple character motion.",
     meta: "Freelance · 2D Animation",
-    behanceHref: "https://www.behance.net/gallery/254792183/Proctologyku-(2D-Animation)",
+    href: "https://www.behance.net/gallery/254792183/Proctologyku-(2D-Animation)",
     image: "/projects/proctologyku.png",
     imageAlt: "Proctologyku (2D Animation) cover",
   },
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     description:
       "Brand-forward promotional edit built to move quickly across social platforms.",
     meta: "Promotional Content",
-    behanceHref: "https://www.behance.net/gallery/254792067/Tebar-Pesona-(Promotional-Content)",
+    href: "https://www.behance.net/gallery/254792067/Tebar-Pesona-(Promotional-Content)",
     image: "/projects/tebar-pesona.png",
     imageAlt: "Tebar Pesona (Promotional Content) cover",
   },
@@ -110,15 +110,11 @@ export const PROJECTS: Project[] = [
     description:
       "Handling the office's self-hosted servers and Cloudflare Tunnel setup — including building a custom dashboard to manage it all from one place.",
     meta: "Technical / Infrastructure",
-    behanceHref: "https://www.behance.net/gallery/254816347/Server-Administration",
+    href: "https://www.behance.net/gallery/254816347/Server-Administration",
     image: "/projects/server-admin.png",
     imageAlt: "Server Administration cover",
   },
 ];
-
-export function getProject(slug: string): Project | undefined {
-  return PROJECTS.find((project) => project.id === slug);
-}
 
 export type ProjectsProps = {
   withHeadline?: boolean;
@@ -198,8 +194,10 @@ function ProjectCard({
       delay={Math.min(index * 0.06, 0.3)}
       className="mb-6 break-inside-avoid md:mb-7"
     >
-      <Link
-        href={`/projects/${project.id}`}
+      <a
+        href={project.href}
+        target="_blank"
+        rel="noreferrer"
         className="project-card flex cursor-pointer flex-col gap-4 rounded-3xl border border-foreground/8 bg-background p-3 sm:p-3.5"
       >
         <header className="flex items-center gap-2.5 px-1 pt-2">
@@ -239,7 +237,7 @@ function ProjectCard({
         <p className="px-1 pb-2 text-[12px] tracking-tight text-foreground/50">
           {project.meta}
         </p>
-      </Link>
+      </a>
     </FadeIn>
   );
 }
