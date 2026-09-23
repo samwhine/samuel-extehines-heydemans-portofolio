@@ -26,10 +26,10 @@ const TECHNICAL_WORK = [
     icon: Globe2,
   },
   {
-    title: "WELL Suite",
+    title: "WELL Ecosystem",
     description:
-      "A growing collection of private, self-hosted tools for media workflows, internal productivity, screen sharing, audio cleanup, and technical operations.",
-    meta: "Private / Self-hosted · Internal Tools",
+      "A collection of personal and self-hosted tools for media workflows, automation, and technical operations — including WELL Downloader and other independent projects.",
+    meta: "Personal Projects · Self-hosted Tools",
     href: "https://github.com/samwhine",
     label: "Explore GitHub projects",
     icon: Wrench,

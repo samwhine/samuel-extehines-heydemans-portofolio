@@ -15,6 +15,8 @@ Personal portfolio of **Samuel Extehines Heydemans — Co-founder of The House W
 
 This is the source code for my personal portfolio site, built with Next.js and Tailwind CSS. It presents two connected sides of my work: selected creative production and technical systems & infrastructure. The site features a custom WebGL flow shader background, a magnetic morphing portrait, Lenis smooth scroll, and a minimal black-and-white design system.
 
+My technical work also includes the **WELL Ecosystem**: a collection of independent personal and self-hosted tools rather than one single product suite. **WELL Downloader** is one of the active projects in that ecosystem, focused on local-first media downloading with Python, FastAPI, yt-dlp, and FFmpeg.
+
 ## Features
 
 - ✅ **Next.js** with App Router
@@ -42,6 +44,15 @@ This is the source code for my personal portfolio site, built with Next.js and T
 - **Projects** — Grid of project cards with hover lift, image zoom, and links out to Behance
 - **About** — Polaroid strip, skills grid, interactive Matter.js stack chips, expandable experience timeline, education list
 - **Contact Card** — Embedded shader, copy-to-clipboard email, secondary social CTAs
+
+## Technical Systems
+
+The portfolio groups my technical work into three areas: server administration and Cloudflare infrastructure, production web products such as The House Works website, and the **WELL Ecosystem** of independent self-hosted tools. Project status varies by repository; the portfolio does not imply that every WELL project is actively maintained.
+
+- **[WELL Downloader](https://github.com/samwhine/WELLDownloader)** — Local-first media downloader for public video, audio, image, and carousel content
+- **WELL Launcher** — Local process and service launcher
+- **WELL Share Screen** — Peer-to-peer screen and webcam sharing for production workflows
+- **WELLMotionGraphicsTemplate** — Motion graphics tooling
 
 ## Getting Started
 
