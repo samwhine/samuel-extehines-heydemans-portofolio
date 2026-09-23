@@ -37,6 +37,19 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    id: "sanfile-manggala-farma",
+    category: "creative",
+    icon: Film,
+    iconLabel: "PT. Sanfile Manggala Farma",
+    title: "Promotional video editing for PT. Sanfile Manggala Farma.",
+    description:
+      "Talking-head edits, factory B-roll, and trend-led social content for a cosmetic OEM/ODM manufacturer.",
+    meta: "Client Work · Promotional Video Editing",
+    href: "https://www.behance.net/gallery/256116219/PT-Sanfile-Manggala-Farma-(Professional-Editing)",
+    image: "/projects/samuel-extehines-heydemans-sanfile-manggala-farma-promotional-video-editing-cover.png",
+    imageAlt: "PT. Sanfile Manggala Farma promotional video editing project cover",
+  },
+  {
     id: "ade-govinda",
     category: "creative",
     icon: Film,
@@ -46,7 +59,7 @@ const PROJECTS: Project[] = [
       "Cutting and pacing performance and promo footage for a working artist's release cycle.",
     meta: "Freelance · Video Editing",
     href: "https://www.behance.net/gallery/254775341/Ade-Govinda-(Professional-Editing)",
-    image: "/projects/ade-govinda.png",
+    image: "/projects/samuel-extehines-heydemans-ade-govinda-professional-video-editing-cover.png",
     imageAlt: "Ade Govinda (Professional Editing) cover",
   },
   {
@@ -59,7 +72,7 @@ const PROJECTS: Project[] = [
       "Fast, punchy comedic edits built for short-form attention spans without losing the joke.",
     meta: "Video Editing",
     href: "https://www.behance.net/gallery/254791715/Nelly-Syara-(MEME-Mentalilty-Funny-Editings)",
-    image: "/projects/nelly-syara.png",
+    image: "/projects/samuel-extehines-heydemans-nelly-syara-meme-comedy-video-editing-cover.png",
     imageAlt: "Nelly Syara (MEME, Mentality, Funny Editings) cover",
   },
   {
@@ -72,7 +85,7 @@ const PROJECTS: Project[] = [
       "Motion and character animation produced end to end for a short-form 2D piece, delivered as freelance work.",
     meta: "Freelance · 2D Animation",
     href: "https://www.behance.net/gallery/254792361/Sidegigx-(2D-Animation)",
-    image: "/projects/sidegigx.png",
+    image: "/projects/samuel-extehines-heydemans-sidegigx-2d-animation-cover.png",
     imageAlt: "Sidegigx (2D Animation) cover",
   },
   {
@@ -85,7 +98,7 @@ const PROJECTS: Project[] = [
       "Comedic 2D animation for a doctor's personal content brand — clean timing, simple character motion.",
     meta: "Freelance · 2D Animation",
     href: "https://www.behance.net/gallery/254792183/Proctologyku-(2D-Animation)",
-    image: "/projects/proctologyku.png",
+    image: "/projects/samuel-extehines-heydemans-proctologyku-2d-animation-cover.png",
     imageAlt: "Proctologyku (2D Animation) cover",
   },
   {
@@ -98,7 +111,7 @@ const PROJECTS: Project[] = [
       "Brand-forward promotional edit built to move quickly across social platforms.",
     meta: "Promotional Content",
     href: "https://www.behance.net/gallery/254792067/Tebar-Pesona-(Promotional-Content)",
-    image: "/projects/tebar-pesona.png",
+    image: "/projects/samuel-extehines-heydemans-tebar-pesona-promotional-content-cover.png",
     imageAlt: "Tebar Pesona (Promotional Content) cover",
   },
   {
@@ -111,7 +124,7 @@ const PROJECTS: Project[] = [
       "Handling the office's self-hosted servers and Cloudflare Tunnel setup — including building a custom dashboard to manage it all from one place.",
     meta: "Technical / Infrastructure",
     href: "https://www.behance.net/gallery/254816347/Server-Administration",
-    image: "/projects/server-admin.png",
+    image: "/projects/samuel-extehines-heydemans-legacy-id-server-administration-cover.png",
     imageAlt: "Server Administration cover",
   },
 ];

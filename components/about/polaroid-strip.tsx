@@ -7,12 +7,12 @@ import { useRef, useSyncExternalStore, type ReactNode } from "react";
 type Polaroid = { id: string; rotate: number; src: string; alt: string };
 
 const PHOTOS: Polaroid[] = [
-  { id: "a", rotate: -8, src: "/about/samuel-producing-midi-keyboard.jpeg", alt: "Samuel Extehines Heydemans producing music on a MIDI keyboard" },
-  { id: "b", rotate: 6, src: "/about/samuel-server-monitoring-dashboard.jpeg", alt: "Samuel Extehines Heydemans monitoring a self-hosted server dashboard" },
-  { id: "c", rotate: -4, src: "/about/samuel-playing-bass-on-stage.jpeg", alt: "Samuel Extehines Heydemans playing bass on stage" },
-  { id: "d", rotate: 7, src: "/about/samuel-working-in-ableton-with-friend.jpeg", alt: "Samuel Extehines Heydemans working in Ableton with a friend" },
-  { id: "e", rotate: -6, src: "/about/samuel-editing-short-form-clip-capcut.jpeg", alt: "Samuel Extehines Heydemans editing a short-form clip in CapCut" },
-  { id: "f", rotate: 5, src: "/about/samuel-playing-drums-on-stage.jpeg", alt: "Samuel Extehines Heydemans playing drums on stage" },
+  { id: "a", rotate: -8, src: "/about/samuel-extehines-heydemans-producing-music-on-midi-keyboard.jpeg", alt: "Samuel Extehines Heydemans producing music on a MIDI keyboard" },
+  { id: "b", rotate: 6, src: "/about/samuel-extehines-heydemans-monitoring-self-hosted-server-dashboard.jpeg", alt: "Samuel Extehines Heydemans monitoring a self-hosted server dashboard" },
+  { id: "c", rotate: -4, src: "/about/samuel-extehines-heydemans-playing-bass-on-stage.jpeg", alt: "Samuel Extehines Heydemans playing bass on stage" },
+  { id: "d", rotate: 7, src: "/about/samuel-extehines-heydemans-working-in-ableton-with-friend.jpeg", alt: "Samuel Extehines Heydemans working in Ableton with a friend" },
+  { id: "e", rotate: -6, src: "/about/samuel-extehines-heydemans-editing-short-form-clip-in-capcut.jpeg", alt: "Samuel Extehines Heydemans editing a short-form clip in CapCut" },
+  { id: "f", rotate: 5, src: "/about/samuel-extehines-heydemans-playing-drums-on-stage.jpeg", alt: "Samuel Extehines Heydemans playing drums on stage" },
 ];
 const EASE = [0.22, 1, 0.36, 1] as const;
 
