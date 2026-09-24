@@ -2,14 +2,15 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/metadata";
 
 const projectImages = [
-  "ade-govinda",
-  "nelly-syara",
-  "sidegigx",
-  "proctologyku",
-  "tebar-pesona",
-  "music-certificate",
-  "server-admin",
-].map((slug) => `${siteConfig.url}/projects/${slug}.png`);
+  "samuel-extehines-heydemans-sanfile-manggala-farma-promotional-video-editing-cover.png",
+  "samuel-extehines-heydemans-ade-govinda-professional-video-editing-cover.png",
+  "samuel-extehines-heydemans-nelly-syara-meme-comedy-video-editing-cover.png",
+  "samuel-extehines-heydemans-sidegigx-2d-animation-cover.png",
+  "samuel-extehines-heydemans-proctologyku-2d-animation-cover.png",
+  "samuel-extehines-heydemans-tebar-pesona-promotional-content-cover.png",
+  "samuel-extehines-heydemans-legacy-id-server-administration-cover.png",
+  "samuel-extehines-heydemans-music-certificate-personal-project-cover.png",
+].map((filename) => `${siteConfig.url}/projects/${filename}`);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-09-20T00:00:00.000Z");

@@ -66,6 +66,7 @@ export default function RootLayout({
       "https://www.behance.net/samuel-e-heydemans",
       "https://www.linkedin.com/in/samuel-extehines-heydemans/",
       "https://instagram.com/samuelheydemans",
+      "https://github.com/samwhine",
     ],
   };
   const websiteJsonLd = {

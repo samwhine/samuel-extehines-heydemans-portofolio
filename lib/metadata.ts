@@ -35,6 +35,11 @@ export const siteConfig = {
     "Samuel Heydemans",
     "Samuel E Heydemans",
     "Samuel Extehines Heydemans",
+    "Creative Technologist Jakarta",
+    "self-hosted infrastructure",
+    "WELL Ecosystem",
+    "WELL Downloader",
+    "Ableton MIDI Remote Script",
   ],
 } as const;
 
