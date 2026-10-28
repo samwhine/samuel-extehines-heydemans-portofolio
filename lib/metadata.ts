@@ -4,13 +4,13 @@ export const siteConfig = {
   name: "Samuel Extehines Heydemans — Co-founder, The House Works | Creative Technologist & Video Editor",
   description:
     "Samuel Extehines Heydemans is the co-founder of The House Works, a creative technologist, and a video editor and creative staff member at Legacy ID.",
-  url: "https://samuel-extehines-heydemans-portofolio.vercel.app",
+  url: "https://samuelheydemans.my.id",
   ogImage: "/og-image.png",
   creator: "@samuelheydemans",
   authors: [
     {
       name: "Samuel Extehines Heydemans",
-      url: "https://samuel-extehines-heydemans-portofolio.vercel.app",
+      url: "https://samuelheydemans.my.id",
     },
   ],
   keywords: [

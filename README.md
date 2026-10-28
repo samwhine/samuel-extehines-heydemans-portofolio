@@ -1,10 +1,10 @@
 # Samuel Extehines Heydemans — Portfolio
 
-[![Portfolio preview](public/og-image.png)](https://samuel-extehines-heydemans-portofolio.vercel.app/)
+[![Portfolio preview](public/og-image.png)](https://samuelheydemans.my.id/)
 
 Personal portfolio of **Samuel Extehines Heydemans — Co-founder of The House Works and Creative Technologist** working across video editing, animation, web products, and self-hosted infrastructure.
 
-- **Live portfolio:** [samuel-extehines-heydemans-portofolio.vercel.app](https://samuel-extehines-heydemans-portofolio.vercel.app/)
+- **Live portfolio:** [samuelheydemans.my.id](https://samuelheydemans.my.id/)
 - **The House Works:** [thehouseworks.vercel.app](https://thehouseworks.vercel.app/)
 - **Behance:** [behance.net/samuel-e-heydemans](https://www.behance.net/samuel-e-heydemans)
 - **LinkedIn:** [linkedin.com/in/samuel-extehines-heydemans](https://www.linkedin.com/in/samuel-extehines-heydemans/)
