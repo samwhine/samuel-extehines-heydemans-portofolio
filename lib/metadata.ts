@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
+  siteName: "Samuel Extehines Heydemans",
   name: "Samuel Extehines Heydemans — Co-founder, The House Works | Creative Technologist & Video Editor",
   description:
     "Samuel Extehines Heydemans is the co-founder of The House Works, a creative technologist, and a video editor and creative staff member at Legacy ID.",
@@ -76,7 +77,7 @@ export const baseMetadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
-    siteName: siteConfig.name,
+    siteName: siteConfig.siteName,
     images: [
       {
         url: siteConfig.ogImage,
@@ -127,7 +128,7 @@ export function createMetadata({
       locale: "en_US",
       title: title ?? siteConfig.name,
       description: description ?? siteConfig.description,
-      siteName: siteConfig.name,
+      siteName: siteConfig.siteName,
       url,
       images: [
         {

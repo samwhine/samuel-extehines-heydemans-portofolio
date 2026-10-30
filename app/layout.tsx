@@ -72,7 +72,8 @@ export default function RootLayout({
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: siteConfig.name,
+    name: siteConfig.siteName,
+    alternateName: ["Samuel Heydemans", "samuelheydemans.my.id"],
     url: siteConfig.url,
     description: siteConfig.description,
     author: {
