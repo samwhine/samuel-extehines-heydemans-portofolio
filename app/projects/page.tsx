@@ -1,4 +1,5 @@
 import { ContactCard } from "@/components/contact/contact-card";
+import { DigitalProducts } from "@/components/products/digital-products";
 import { Projects } from "@/components/projects/projects";
 import { TechnicalWork } from "@/components/projects/technical-work";
 import { FadeIn } from "@/components/ui/motion-primitives";
@@ -47,12 +48,14 @@ export default function ProjectsPage(): ReactNode {
         <Projects />
       </section>
 
+      <DigitalProducts />
+
       <TechnicalWork />
 
       <section className="mx-auto w-full max-w-275 px-6 sm:px-10">
         <FadeIn className="flex flex-wrap justify-center gap-3">
           <a
-            href="https://www.behance.net/samuel-e-heydemans"
+            href="https://www.behance.net/samuelheydemans"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-foreground/8 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"

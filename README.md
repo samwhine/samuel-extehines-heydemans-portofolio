@@ -2,11 +2,11 @@
 
 [![Portfolio preview](public/og-image.png)](https://samuelheydemans.my.id/)
 
-Personal portfolio of **Samuel Extehines Heydemans — Co-founder of The House Works and Creative Technologist** working across video editing, animation, web products, and self-hosted infrastructure.
+Personal portfolio of **Samuel Extehines Heydemans (@samwhine on GitHub) — Co-founder of The House Works and Creative Technologist** working across video editing, animation, web products, and self-hosted infrastructure.
 
 - **Live portfolio:** [samuelheydemans.my.id](https://samuelheydemans.my.id/)
 - **The House Works:** [thehouseworks.vercel.app](https://thehouseworks.vercel.app/)
-- **Behance:** [behance.net/samuel-e-heydemans](https://www.behance.net/samuel-e-heydemans)
+- **Behance:** [behance.net/samuelheydemans](https://www.behance.net/samuelheydemans)
 - **LinkedIn:** [linkedin.com/in/samuel-extehines-heydemans](https://www.linkedin.com/in/samuel-extehines-heydemans/)
 - **GitHub:** [github.com/samwhine](https://github.com/samwhine)
 - **Contact:** [samuel.heydemanss@gmail.com](mailto:samuel.heydemanss@gmail.com)
@@ -190,7 +190,7 @@ The palette is strict black and white. No accent or semantic color hues are used
 
 - 📧 [samuel.heydemanss@gmail.com](mailto:samuel.heydemanss@gmail.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/samuel-extehines-heydemans/)
-- 🎨 [Behance](https://www.behance.net/samuel-e-heydemans)
+- 🎨 [Behance](https://www.behance.net/samuelheydemans)
 - 📷 [Instagram](https://instagram.com/samuelheydemans)
 
 ---

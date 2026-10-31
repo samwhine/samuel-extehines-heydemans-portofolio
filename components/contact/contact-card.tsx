@@ -62,7 +62,7 @@ export function ContactCard(): ReactNode {
                     lucideIcon={Instagram}
                   />
                   <SocialIcon
-                    href="https://www.behance.net/samuel-e-heydemans"
+                    href="https://www.behance.net/samuelheydemans"
                     label="Behance"
                     imageSrc="/icons/stack/behance.svg"
                   />

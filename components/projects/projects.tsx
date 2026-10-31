@@ -12,7 +12,7 @@ import Link from "next/link";
 
 import { FadeIn } from "@/components/ui/motion-primitives";
 
-const BEHANCE_PROFILE_URL = "https://www.behance.net/samuel-e-heydemans";
+const BEHANCE_PROFILE_URL = "https://www.behance.net/samuelheydemans";
 
 /**
  * These covers are the actual project thumbnails from Behance, saved

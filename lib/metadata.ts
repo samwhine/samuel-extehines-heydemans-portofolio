@@ -36,6 +36,8 @@ export const siteConfig = {
     "Samuel Heydemans",
     "Samuel E Heydemans",
     "Samuel Extehines Heydemans",
+    "samwhine",
+    "Samuel Extehines Heydemans GitHub",
     "Creative Technologist Jakarta",
     "self-hosted infrastructure",
     "WELL Ecosystem",

@@ -47,37 +47,57 @@ export default function RootLayout({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteConfig.url}/#person`,
     name: "Samuel Extehines Heydemans",
+    alternateName: ["Samuel Heydemans", "Samuel E. Heydemans", "samwhine"],
     url: siteConfig.url,
     jobTitle: "Co-founder, The House Works | Creative Technologist & Video Editor",
     description: siteConfig.description,
     image: `${siteConfig.url}/samuel-extehines-heydemans-portrait.png`,
     worksFor: {
       "@type": "Organization",
-      name: "Legacy ID",
-    },
-    memberOf: {
-      "@type": "Organization",
       name: "The House Works",
       url: THE_HOUSE_WORKS_URL,
-      roleName: "Co-founder & Creative Partner",
+    },
+    affiliation: [
+      {
+        "@type": "Organization",
+        name: "Legacy ID",
+      },
+      {
+        "@type": "Organization",
+        name: "GMS Kelapa Gading",
+      },
+    ],
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "GitHub username",
+      value: "samwhine",
+      url: "https://github.com/samwhine",
     },
     sameAs: [
-      "https://www.behance.net/samuel-e-heydemans",
+      "https://www.behance.net/samuelheydemans",
       "https://www.linkedin.com/in/samuel-extehines-heydemans/",
-      "https://instagram.com/samuelheydemans",
+      "https://www.instagram.com/samuelheydemans",
       "https://github.com/samwhine",
+      "https://lynk.id/samuelextehinesheydemans",
     ],
   };
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.siteName,
-    alternateName: ["Samuel Heydemans", "samuelheydemans.my.id"],
+    alternateName: [
+      "Samuel Heydemans",
+      "Samuel E. Heydemans",
+      "samwhine",
+      "samuelheydemans.my.id",
+    ],
     url: siteConfig.url,
     description: siteConfig.description,
     author: {
       "@type": "Person",
+      "@id": `${siteConfig.url}/#person`,
       name: "Samuel Extehines Heydemans",
       url: siteConfig.url,
       memberOf: {
