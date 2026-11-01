@@ -58,9 +58,9 @@ export function EditBreakdown(): ReactNode {
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 360, damping: 28, mass: 0.65 }}
-            className="relative overflow-hidden rounded-3xl border border-foreground/8 bg-foreground/3 shadow-sm dark:bg-foreground/5"
+            className="relative mx-auto w-full max-w-[560px] overflow-hidden rounded-3xl border border-foreground/8 bg-foreground/3 shadow-sm dark:bg-foreground/5"
           >
-            <div className="relative aspect-video w-full overflow-hidden bg-black sm:aspect-[16/8]">
+            <div className="relative mx-auto aspect-[9/16] w-full overflow-hidden bg-black">
               <iframe
                 id="raw-edited-youtube-player"
                 className="absolute inset-0 h-full w-full"

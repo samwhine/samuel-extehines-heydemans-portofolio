@@ -56,7 +56,7 @@ export function EditBreakdownTeaser(): ReactNode {
             </p>
           </div>
 
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black">
+          <div className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-2xl bg-black">
             <iframe
               id="raw-edited-youtube-teaser"
               className="absolute inset-0 h-full w-full"
