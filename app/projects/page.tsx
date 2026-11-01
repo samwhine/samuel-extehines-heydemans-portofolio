@@ -2,6 +2,7 @@ import { ContactCard } from "@/components/contact/contact-card";
 import { DigitalProducts } from "@/components/products/digital-products";
 import { Projects } from "@/components/projects/projects";
 import { TechnicalWork } from "@/components/projects/technical-work";
+import { EditBreakdown } from "@/components/showcase/edit-breakdown";
 import { FadeIn } from "@/components/ui/motion-primitives";
 import { createMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
@@ -30,6 +31,8 @@ export default function ProjectsPage(): ReactNode {
           </p>
         </FadeIn>
       </section>
+
+      <EditBreakdown />
 
       <section aria-labelledby="creative-work-heading">
         <div className="mx-auto w-full max-w-275 px-6 sm:px-10">

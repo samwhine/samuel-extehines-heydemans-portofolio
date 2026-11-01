@@ -50,6 +50,19 @@ const PROJECTS: Project[] = [
     imageAlt: "PT. Sanfile Manggala Farma promotional video editing project cover",
   },
   {
+    id: "hifami",
+    category: "creative",
+    icon: Film,
+    iconLabel: "HiFami",
+    title: "Talking-head video editing for HiFami.",
+    description:
+      "A direct, personality-led social edit shaped with strong pacing, expressive typography, and advertising-focused visual rhythm.",
+    meta: "Client Work · Talking-Head Editing",
+    href: "https://www.behance.net/gallery/257882583/HiFami-(Talking-Head-Video)",
+    image: "/projects/samuel-extehines-heydemans-hifami-talking-head-video-cover.png",
+    imageAlt: "HiFami talking-head video editing project cover by Samuel Extehines Heydemans",
+  },
+  {
     id: "ade-govinda",
     category: "creative",
     icon: Film,

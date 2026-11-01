@@ -1,6 +1,7 @@
 import { AboutPreview } from "@/components/about/about-preview";
 import { ContactCard } from "@/components/contact/contact-card";
 import { Hero } from "@/components/hero/hero";
+import { EditBreakdownTeaser } from "@/components/showcase/edit-breakdown-teaser";
 import { Projects } from "@/components/projects/projects";
 import { createMetadata, siteConfig } from "@/lib/metadata";
 import type { Metadata } from "next";
@@ -16,7 +17,8 @@ export default function HomePage(): ReactNode {
     <main id="main-content" className="flex flex-1 flex-col gap-20 sm:gap-28">
       <Hero />
       <AboutPreview />
-      <Projects withHeadline viewMoreVisible />
+      <Projects withHeadline />
+      <EditBreakdownTeaser />
       <ContactCard />
       <div className="h-12 sm:h-16" />
     </main>

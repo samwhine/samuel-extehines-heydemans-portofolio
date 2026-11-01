@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/metadata";
 
 const projectImages = [
   "samuel-extehines-heydemans-sanfile-manggala-farma-promotional-video-editing-cover.png",
+  "samuel-extehines-heydemans-hifami-talking-head-video-cover.png",
   "samuel-extehines-heydemans-ade-govinda-professional-video-editing-cover.png",
   "samuel-extehines-heydemans-nelly-syara-meme-comedy-video-editing-cover.png",
   "samuel-extehines-heydemans-sidegigx-2d-animation-cover.png",
