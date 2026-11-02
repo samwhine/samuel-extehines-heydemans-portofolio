@@ -39,12 +39,7 @@ export function ContactButton(): ReactNode {
 
   useLayoutEffect(() => {
     if (!isOpen) return;
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        setIsOpen(false);
-      }
-    };
+    const handleKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setIsOpen(false); };
     const scrollY = window.scrollY;
     const previous = { overflow: document.body.style.overflow, paddingRight: document.body.style.paddingRight, position: document.body.style.position, top: document.body.style.top, width: document.body.style.width };
     document.addEventListener("keydown", handleKeyDown);
@@ -77,30 +72,29 @@ export function ContactButton(): ReactNode {
         <AnimatePresence>
           {isOpen ? (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, backdropFilter: shouldReduceMotion ? "blur(0px)" : "blur(0px)" }}
+              animate={{ opacity: 1, backdropFilter: shouldReduceMotion ? "blur(0px)" : "blur(12px)" }}
               exit={{ opacity: 0 }}
-              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.24, ease: EASE }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.48, ease: EASE }}
               className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-foreground/[0.18] p-5 sm:p-6"
               role="presentation"
-              onPointerDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false); }}
+              onMouseDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false); }}
             >
               <motion.div aria-hidden="true" initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 0.55, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.9, ease: EASE }} className="pointer-events-none absolute h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.22),transparent_64%)] blur-3xl" />
               <motion.div
-                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12, scale: shouldReduceMotion ? 1 : 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: shouldReduceMotion ? 0 : 8, scale: shouldReduceMotion ? 1 : 0.985 }}
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 18, scale: shouldReduceMotion ? 1 : 0.965, filter: shouldReduceMotion ? "blur(0px)" : "blur(5px)" }}
+                animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: shouldReduceMotion ? 0 : 10, scale: shouldReduceMotion ? 1 : 0.98, filter: shouldReduceMotion ? "blur(0px)" : "blur(3px)" }}
                 transition={modalTransition}
-                className="relative z-10 w-full max-w-md overflow-hidden rounded-[2rem] border border-foreground/12 bg-background p-6 text-foreground shadow-[0_30px_100px_-28px_rgb(0_0_0/0.45)] sm:p-8"
+                className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-foreground/12 bg-background/90 p-6 text-foreground shadow-[0_30px_100px_-28px_rgb(0_0_0/0.45)] backdrop-blur-2xl sm:p-8"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="contact-dialog-title"
                 aria-describedby="contact-dialog-description"
-                onPointerDown={(event) => event.stopPropagation()}
               >
                 <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/25 to-transparent" />
                 <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-52 w-52 rounded-full bg-foreground/[0.045] blur-2xl" />
-                <button ref={closeRef} type="button" onClick={() => setIsOpen(false)} className="focus-ring absolute right-4 top-4 z-20 inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full text-foreground/50 transition-[background-color,color,transform] duration-200 hover:rotate-90 hover:bg-foreground/7 hover:text-foreground" aria-label="Close contact options"><X className="h-4 w-4" aria-hidden="true" /></button>
+                <button ref={closeRef} type="button" onClick={() => setIsOpen(false)} className="focus-ring absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground/50 transition-[background-color,color,transform] duration-300 hover:rotate-90 hover:bg-foreground/7 hover:text-foreground" aria-label="Close contact options"><X className="h-4 w-4" aria-hidden="true" /></button>
                 <motion.div initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }} animate={{ opacity: 1, y: 0 }} transition={itemTransition} className="relative pr-10"><p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/45"><span className="h-1.5 w-1.5 rounded-full bg-foreground/45" aria-hidden="true" />Get in touch</p><h2 id="contact-dialog-title" className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">Let&rsquo;s connect</h2><p id="contact-dialog-description" className="mt-3 text-sm leading-relaxed text-foreground/60">Have a project in mind? Choose the channel that works best for you.</p></motion.div>
                 <motion.div initial="hidden" animate="show" exit="hidden" variants={{ hidden: {}, show: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.065, delayChildren: shouldReduceMotion ? 0 : 0.08 } } }} className="relative mt-7 grid gap-3">
                   {contactOptions.map(({ label, description, href, icon: Icon }) => (
