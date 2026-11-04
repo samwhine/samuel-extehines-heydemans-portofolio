@@ -180,7 +180,7 @@ export function Projects({
           {viewMoreVisible ? (
             <Link
               href="/projects"
-              className="liquid-control focus-ring group inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium text-foreground"
+              className="border border-foreground/8 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5"
             >
               View all work
               <ArrowRight
@@ -193,7 +193,7 @@ export function Projects({
             href={BEHANCE_PROFILE_URL}
             target="_blank"
             rel="noreferrer"
-            className="liquid-control focus-ring group inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background"
+            className="border border-foreground/8 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
             View full profile on Behance
             <ArrowRight
@@ -224,7 +224,7 @@ function ProjectCard({
         href={project.href}
         target="_blank"
         rel="noreferrer"
-        className="project-card liquid-card focus-ring flex cursor-pointer flex-col gap-4 rounded-3xl p-3 outline-none active:scale-[0.99] sm:p-3.5"
+        className="project-card focus-ring flex cursor-pointer flex-col gap-4 rounded-3xl border border-foreground/8 bg-background p-3 outline-none transition-[transform,box-shadow,border-color] duration-300 active:scale-[0.99] sm:p-3.5"
       >
         <header className="flex items-center gap-2.5 px-1 pt-2">
           <span className="border-foreground/10 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border bg-background">

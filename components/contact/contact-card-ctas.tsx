@@ -27,7 +27,7 @@ export function ContactCardCtas(): ReactNode {
         >
           <Link
             href="/projects"
-            className="liquid-control focus-ring group inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium text-foreground"
+            className="border border-foreground/5 focus-ring group inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-md/2 transition-[background-color,transform] duration-250 active:scale-[0.98] hover:bg-foreground/5"
           >
             See projects
             <ArrowRight
