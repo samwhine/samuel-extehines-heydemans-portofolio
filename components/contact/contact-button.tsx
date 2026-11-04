@@ -33,9 +33,6 @@ export function ContactButton(): ReactNode {
     if (isOpen) {
       wasOpenRef.current = true;
       closeRef.current?.focus();
-    } else if (wasOpenRef.current && isMounted) {
-      triggerRef.current?.focus({ preventScroll: true });
-      wasOpenRef.current = false;
     }
   }, [isOpen, isMounted]);
 
@@ -80,7 +77,6 @@ export function ContactButton(): ReactNode {
     };
   }, [isOpen]);
 
-  const modalTransition = shouldReduceMotion ? { duration: 0 } : { type: "spring" as const, stiffness: 360, damping: 30, mass: 0.72 };
   const itemTransition = shouldReduceMotion ? { duration: 0 } : { type: "spring" as const, stiffness: 440, damping: 32, mass: 0.55 };
 
   return (
@@ -89,13 +85,22 @@ export function ContactButton(): ReactNode {
         <Mail className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-rotate-6" aria-hidden="true" /><span>Contact</span>
       </motion.button>
       {isMounted ? createPortal(
-        <AnimatePresence>
+        <AnimatePresence
+          initial={false}
+          mode="wait"
+          onExitComplete={() => {
+            if (wasOpenRef.current) {
+              triggerRef.current?.focus({ preventScroll: true });
+              wasOpenRef.current = false;
+            }
+          }}
+        >
           {isOpen ? (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.24, ease: EASE }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.2, ease: EASE }}
               className="fixed inset-0 z-[10000] flex items-center justify-center overscroll-contain overflow-hidden bg-foreground/[0.16] p-5 backdrop-blur-[3px] sm:p-6"
               role="presentation"
               onPointerDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false); }}
@@ -105,7 +110,7 @@ export function ContactButton(): ReactNode {
                 initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12, scale: shouldReduceMotion ? 1 : 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: shouldReduceMotion ? 0 : 8, scale: shouldReduceMotion ? 1 : 0.985 }}
-                transition={modalTransition}
+                transition={shouldReduceMotion ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34, mass: 0.7 }}
                 ref={dialogRef}
                 className="relative z-10 w-full max-w-md origin-center overflow-hidden rounded-[2rem] border border-foreground/12 bg-background/95 p-6 text-foreground shadow-[0_30px_100px_-28px_rgb(0_0_0/0.45)] backdrop-blur-xl sm:p-8"
                 role="dialog"

@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { BriefcaseBusiness, Github, Instagram, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -64,7 +63,7 @@ export function ContactCard(): ReactNode {
                   <SocialIcon
                     href="https://www.behance.net/samuelheydemans"
                     label="Behance"
-                    imageSrc="/icons/stack/behance.svg"
+                    lucideIcon={BriefcaseBusiness}
                   />
                 </div>
                 <div className="flex flex-col items-center gap-1 text-center">
@@ -88,12 +87,10 @@ function SocialIcon({
   href,
   label,
   lucideIcon: LucideIcon,
-  imageSrc,
 }: {
   href: string;
   label: string;
   lucideIcon?: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-  imageSrc?: string;
 }): ReactNode {
   const isExternal = href.startsWith("http");
   const props = isExternal
@@ -106,19 +103,7 @@ function SocialIcon({
       className="liquid-control focus-ring inline-flex h-11 w-11 items-center justify-center rounded-xl text-foreground/70 hover:text-foreground"
       {...props}
     >
-      {LucideIcon ? (
-        <LucideIcon className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
-      ) : imageSrc ? (
-        <Image
-          src={imageSrc}
-          alt=""
-          width={14}
-          height={14}
-          aria-hidden="true"
-          draggable={false}
-          className="max-h-[14px] max-w-[14px] object-contain dark:invert"
-        />
-      ) : null}
+      {LucideIcon ? <LucideIcon className="h-4 w-4" strokeWidth={2.2} aria-hidden="true" /> : null}
     </Link>
   );
 }
