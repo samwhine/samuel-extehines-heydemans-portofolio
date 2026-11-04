@@ -18,6 +18,7 @@ const contactOptions = [
 
 const emptySubscribe = () => () => {};
 const EASE = [0.22, 1, 0.36, 1] as const;
+const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 export function ContactButton(): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,7 @@ export function ContactButton(): ReactNode {
   const shouldReduceMotion = useReducedMotion();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const wasOpenRef = useRef(false);
 
   useEffect(() => {
@@ -43,6 +45,19 @@ export function ContactButton(): ReactNode {
       if (event.key === "Escape") {
         event.preventDefault();
         setIsOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE);
+      if (!focusable?.length) return;
+      const first = focusable[0]!;
+      const last = focusable[focusable.length - 1]!;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
     const scrollY = window.scrollY;
@@ -81,7 +96,7 @@ export function ContactButton(): ReactNode {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.24, ease: EASE }}
-              className="fixed inset-0 z-[10000] flex items-center justify-center overflow-hidden bg-foreground/[0.18] p-5 sm:p-6"
+              className="fixed inset-0 z-[10000] flex items-center justify-center overscroll-contain overflow-hidden bg-foreground/[0.16] p-5 backdrop-blur-[3px] sm:p-6"
               role="presentation"
               onPointerDown={(event) => { if (event.target === event.currentTarget) setIsOpen(false); }}
             >
@@ -91,7 +106,8 @@ export function ContactButton(): ReactNode {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: shouldReduceMotion ? 0 : 8, scale: shouldReduceMotion ? 1 : 0.985 }}
                 transition={modalTransition}
-                className="relative z-10 w-full max-w-md overflow-hidden rounded-[2rem] border border-foreground/12 bg-background p-6 text-foreground shadow-[0_30px_100px_-28px_rgb(0_0_0/0.45)] sm:p-8"
+                ref={dialogRef}
+                className="relative z-10 w-full max-w-md origin-center overflow-hidden rounded-[2rem] border border-foreground/12 bg-background/95 p-6 text-foreground shadow-[0_30px_100px_-28px_rgb(0_0_0/0.45)] backdrop-blur-xl sm:p-8"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="contact-dialog-title"
@@ -100,11 +116,11 @@ export function ContactButton(): ReactNode {
               >
                 <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/25 to-transparent" />
                 <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-52 w-52 rounded-full bg-foreground/[0.045] blur-2xl" />
-                <button ref={closeRef} type="button" onClick={() => setIsOpen(false)} className="focus-ring absolute right-4 top-4 z-20 inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full text-foreground/50 transition-[background-color,color,transform] duration-200 hover:rotate-90 hover:bg-foreground/7 hover:text-foreground" aria-label="Close contact options"><X className="h-4 w-4" aria-hidden="true" /></button>
+                <button ref={closeRef} type="button" onClick={() => setIsOpen(false)} className="focus-ring absolute right-4 top-4 z-20 inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full text-foreground/50 transition-[background-color,color,transform] duration-200 hover:rotate-90 hover:bg-foreground/7 hover:text-foreground active:scale-95" aria-label="Close contact options"><X className="h-4 w-4" aria-hidden="true" /></button>
                 <motion.div initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }} animate={{ opacity: 1, y: 0 }} transition={itemTransition} className="relative pr-10"><p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/45"><span className="h-1.5 w-1.5 rounded-full bg-foreground/45" aria-hidden="true" />Get in touch</p><h2 id="contact-dialog-title" className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">Let&rsquo;s connect</h2><p id="contact-dialog-description" className="mt-3 text-sm leading-relaxed text-foreground/60">Have a project in mind? Choose the channel that works best for you.</p></motion.div>
                 <motion.div initial="hidden" animate="show" exit="hidden" variants={{ hidden: {}, show: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.065, delayChildren: shouldReduceMotion ? 0 : 0.08 } } }} className="relative mt-7 grid gap-3">
                   {contactOptions.map(({ label, description, href, icon: Icon }) => (
-                    <motion.a key={label} variants={{ hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 14, scale: shouldReduceMotion ? 1 : 0.985 }, show: { opacity: 1, y: 0, scale: 1 } }} transition={itemTransition} whileHover={{ y: shouldReduceMotion ? 0 : -2 }} whileTap={{ scale: shouldReduceMotion ? 1 : 0.992 }} href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noopener noreferrer"} onClick={() => setIsOpen(false)} className="focus-ring group flex items-center gap-4 rounded-2xl border border-foreground/10 bg-background/70 px-4 py-3.5 transition-[border-color,background-color,box-shadow] duration-300 hover:border-foreground/20 hover:bg-foreground/[0.035] hover:shadow-[0_12px_30px_-18px_rgb(0_0_0/0.4)]">
+                    <motion.a key={label} variants={{ hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 14, scale: shouldReduceMotion ? 1 : 0.985 }, show: { opacity: 1, y: 0, scale: 1 } }} transition={itemTransition} whileHover={{ y: shouldReduceMotion ? 0 : -2 }} whileTap={{ scale: shouldReduceMotion ? 1 : 0.992 }} href={href} target={label === "Email" ? undefined : "_blank"} rel={label === "Email" ? undefined : "noopener noreferrer"} onClick={() => setIsOpen(false)} className="focus-ring group flex min-h-14 touch-manipulation items-center gap-4 rounded-2xl border border-foreground/10 bg-background/70 px-4 py-3.5 transition-[border-color,background-color,box-shadow] duration-300 hover:border-foreground/20 hover:bg-foreground/[0.035] hover:shadow-[0_12px_30px_-18px_rgb(0_0_0/0.4)]">
                       <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-foreground text-background transition-transform duration-300 group-hover:scale-105"><Icon className="h-4 w-4" aria-hidden="true" /></span><span className="min-w-0"><span className="block text-sm font-medium">{label}</span><span className="block truncate text-xs text-foreground/55">{description}</span></span><span className="ml-auto text-lg leading-none text-foreground/30 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-foreground/60" aria-hidden="true">&rarr;</span>
                     </motion.a>
                   ))}

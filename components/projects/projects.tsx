@@ -224,7 +224,7 @@ function ProjectCard({
         href={project.href}
         target="_blank"
         rel="noreferrer"
-        className="project-card flex cursor-pointer flex-col gap-4 rounded-3xl border border-foreground/8 bg-background p-3 sm:p-3.5"
+        className="project-card focus-ring flex cursor-pointer flex-col gap-4 rounded-3xl border border-foreground/8 bg-background p-3 outline-none transition-[transform,box-shadow,border-color] duration-300 active:scale-[0.99] sm:p-3.5"
       >
         <header className="flex items-center gap-2.5 px-1 pt-2">
           <span className="border-foreground/10 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border bg-background">
