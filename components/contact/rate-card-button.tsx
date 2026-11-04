@@ -38,7 +38,7 @@ export function RateCardButton(): ReactNode {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="border border-foreground/5 focus-ring inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl bg-background px-5 text-sm font-medium text-foreground shadow-md/2 transition-colors hover:bg-foreground/[0.03]"
+        className="liquid-control focus-ring inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl px-5 text-sm font-medium text-foreground"
         aria-haspopup="dialog"
         aria-expanded={isOpen}
       >

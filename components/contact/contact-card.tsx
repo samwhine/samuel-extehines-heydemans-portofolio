@@ -14,7 +14,7 @@ export function ContactCard(): ReactNode {
   return (
     <section className="mx-auto my-12 w-full max-w-275 px-6 sm:my-20 sm:px-10">
       <FadeIn>
-        <div className="relative w-full overflow-hidden rounded-4xl border border-foreground/8 bg-background p-1.5 shadow-sm">
+        <div className="liquid-card relative w-full rounded-4xl p-1.5 shadow-sm">
           <div className="relative w-full overflow-hidden rounded-[1.6rem]">
             <div
               aria-hidden="true"
@@ -103,7 +103,7 @@ function SocialIcon({
     <Link
       href={href}
       aria-label={label}
-      className="border-foreground/8 hover:border-foreground/15 focus-ring inline-flex h-11 w-11 items-center justify-center rounded-xl border bg-background text-foreground/70 transition-colors hover:text-foreground"
+      className="liquid-control focus-ring inline-flex h-11 w-11 items-center justify-center rounded-xl text-foreground/70 hover:text-foreground"
       {...props}
     >
       {LucideIcon ? (

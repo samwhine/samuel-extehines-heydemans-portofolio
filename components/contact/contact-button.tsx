@@ -85,7 +85,7 @@ export function ContactButton(): ReactNode {
 
   return (
     <>
-      <motion.button ref={triggerRef} type="button" onClick={() => setIsOpen(true)} whileHover={{ y: shouldReduceMotion ? 0 : -2, scale: shouldReduceMotion ? 1 : 1.015 }} whileTap={{ y: 0, scale: shouldReduceMotion ? 1 : 0.985 }} transition={shouldReduceMotion ? { duration: 0 } : { type: "spring", stiffness: 520, damping: 28, mass: 0.55 }} className="focus-ring group inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl bg-foreground px-5 text-sm font-medium text-background" aria-haspopup="dialog" aria-expanded={isOpen}>
+      <motion.button ref={triggerRef} type="button" onClick={() => setIsOpen(true)} whileHover={{ y: shouldReduceMotion ? 0 : -2, scale: shouldReduceMotion ? 1 : 1.015 }} whileTap={{ y: 0, scale: shouldReduceMotion ? 1 : 0.985 }} transition={shouldReduceMotion ? { duration: 0 } : { type: "spring", stiffness: 520, damping: 28, mass: 0.55 }} className="liquid-control focus-ring group inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl bg-foreground px-5 text-sm font-medium text-background" aria-haspopup="dialog" aria-expanded={isOpen}>
         <Mail className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:-rotate-6" aria-hidden="true" /><span>Contact</span>
       </motion.button>
       {isMounted ? createPortal(

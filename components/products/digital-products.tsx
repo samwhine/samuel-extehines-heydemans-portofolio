@@ -51,7 +51,7 @@ export function DigitalProducts(): ReactNode {
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.995 }}
                 transition={{ type: "spring", stiffness: 360, damping: 28, mass: 0.65 }}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/8 bg-background transition-[border-color,box-shadow] duration-500 hover:border-foreground/20 hover:shadow-2xl"
+                className="liquid-card group flex h-full flex-col rounded-3xl"
               >
                 <div className="relative aspect-[9/16] max-h-[34rem] w-full overflow-hidden bg-foreground/5 sm:max-h-[38rem]">
                   <iframe
@@ -84,7 +84,7 @@ export function DigitalProducts(): ReactNode {
                     href={product.productUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="focus-ring mt-auto inline-flex w-fit items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                    className="liquid-control focus-ring mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
                   >
                     Get the pack
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />

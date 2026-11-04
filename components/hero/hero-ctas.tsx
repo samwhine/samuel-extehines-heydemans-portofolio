@@ -26,7 +26,7 @@ export function HeroCtas(): ReactNode {
         >
           <Link
             href="/projects"
-            className="border border-foreground/5 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-2xl transition-colors hover:bg-foreground/4"
+            className="liquid-control focus-ring group inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium text-foreground"
           >
             View My Work
             <ArrowRight
@@ -44,7 +44,7 @@ export function HeroCtas(): ReactNode {
             href={THE_HOUSE_WORKS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-foreground/5 focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-background px-5 py-2.5 text-sm font-medium text-foreground shadow-2xl transition-colors hover:bg-foreground/4"
+            className="liquid-control focus-ring group inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium text-foreground"
           >
             The House Works
             <ArrowRight
