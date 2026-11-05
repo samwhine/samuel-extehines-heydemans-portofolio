@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 type NavItem = { label: string; href: string };
-const NAV_ITEMS: readonly NavItem[] = [{ label: "Home", href: "/" }, { label: "Projects", href: "/projects" }, { label: "About", href: "/about" }];
+const NAV_ITEMS: readonly NavItem[] = [{ label: "Home", href: "/" }, { label: "Projects", href: "/projects" }, { label: "Shop", href: "/shop" }, { label: "About", href: "/about" }];
 const emptySubscribe = () => () => {};
 
 function useIsMounted(): boolean { return useSyncExternalStore(emptySubscribe, () => true, () => false); }

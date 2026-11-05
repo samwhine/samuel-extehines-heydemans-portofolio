@@ -51,7 +51,7 @@ export function DigitalProducts(): ReactNode {
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.995 }}
                 transition={{ type: "spring", stiffness: 360, damping: 28, mass: 0.65 }}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/8 bg-background transition-[border-color,box-shadow] duration-500 hover:border-foreground/20 hover:shadow-2xl"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background/70 shadow-[0_14px_45px_-26px_rgb(0_0_0/0.5)] backdrop-blur-xl transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_24px_55px_-26px_rgb(0_0_0/0.6)]"
               >
                 <div className="relative aspect-[9/16] max-h-[34rem] w-full overflow-hidden bg-foreground/5 sm:max-h-[38rem]">
                   <iframe
@@ -84,7 +84,7 @@ export function DigitalProducts(): ReactNode {
                     href={product.productUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="focus-ring mt-auto inline-flex w-fit items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                    className="focus-ring mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-xl bg-foreground/90 px-4 py-2.5 text-sm font-medium text-background shadow-[0_10px_24px_-12px_rgb(0_0_0/0.5)] transition-[transform,opacity,box-shadow] duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[0_16px_30px_-14px_rgb(0_0_0/0.6)] active:translate-y-0 active:scale-[0.98]"
                   >
                     Get the pack
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />

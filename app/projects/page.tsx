@@ -1,5 +1,4 @@
 import { ContactCard } from "@/components/contact/contact-card";
-import { DigitalProducts } from "@/components/products/digital-products";
 import { Projects } from "@/components/projects/projects";
 import { TechnicalWork } from "@/components/projects/technical-work";
 import { EditBreakdown } from "@/components/showcase/edit-breakdown";
@@ -50,8 +49,6 @@ export default function ProjectsPage(): ReactNode {
         </div>
         <Projects />
       </section>
-
-      <DigitalProducts />
 
       <TechnicalWork />
 
