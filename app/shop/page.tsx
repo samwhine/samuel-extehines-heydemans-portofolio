@@ -40,7 +40,7 @@ export default function ShopPage(): ReactNode {
             href="https://lynk.id/samuelextehinesheydemans"
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring group inline-flex cursor-pointer items-center gap-2 rounded-xl border border-foreground/8 bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="focus-ring group inline-flex self-start cursor-pointer items-center gap-2 rounded-xl border border-foreground/8 bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
             Open Lynk.id shop <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
           </a>
