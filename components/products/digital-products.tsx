@@ -1,8 +1,7 @@
 "use client";
 
-import { ArrowUpRight, ShoppingBag } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import type { ReactNode } from "react";
-import { motion } from "motion/react";
 
 import { FadeIn } from "@/components/ui/motion-primitives";
 
@@ -47,21 +46,20 @@ export function DigitalProducts(): ReactNode {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {DIGITAL_PRODUCTS.map((product, index) => (
             <FadeIn key={product.previewId} delay={index * 0.07}>
-              <motion.article
-                whileHover={{ y: -5 }}
-                whileTap={{ scale: 0.995 }}
-                transition={{ type: "spring", stiffness: 360, damping: 28, mass: 0.65 }}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background/70 shadow-[0_14px_45px_-26px_rgb(0_0_0/0.5)] backdrop-blur-xl transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_24px_55px_-26px_rgb(0_0_0/0.6)]"
+              <article
+                className="project-card group flex h-full flex-col gap-4 rounded-3xl border border-foreground/8 bg-background p-3 outline-none transition-[transform,box-shadow,border-color] duration-300 active:scale-[0.99] sm:p-3.5"
               >
-                <div className="relative aspect-[9/16] max-h-[34rem] w-full overflow-hidden bg-foreground/5 sm:max-h-[38rem]">
-                  <iframe
-                    className="pointer-events-none absolute inset-0 h-full w-full scale-[1.01]"
-                    src={`https://www.youtube.com/embed/${product.previewId}?autoplay=1&mute=1&loop=1&playlist=${product.previewId}&controls=0&playsinline=1&rel=0&modestbranding=1`}
-                    title={`${product.title} preview by Samuel Extehines Heydemans`}
-                    loading="lazy"
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  />
+                <div className="project-card__image relative w-full overflow-hidden rounded-2xl bg-foreground/5 ring-1 ring-foreground/5" style={{ aspectRatio: "9 / 16" }}>
+                  <div className="project-card__image-inner">
+                    <iframe
+                      className="pointer-events-none absolute inset-0 h-full w-full scale-[1.01]"
+                      src={`https://www.youtube.com/embed/${product.previewId}?autoplay=1&mute=1&loop=1&playlist=${product.previewId}&controls=0&playsinline=1&rel=0&modestbranding=1`}
+                      title={`${product.title} preview by Samuel Extehines Heydemans`}
+                      loading="lazy"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                    />
+                  </div>
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/70 to-transparent" aria-hidden="true" />
                 </div>
 
@@ -84,13 +82,13 @@ export function DigitalProducts(): ReactNode {
                     href={product.productUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="focus-ring mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-xl bg-foreground/90 px-4 py-2.5 text-sm font-medium text-background shadow-[0_10px_24px_-12px_rgb(0_0_0/0.5)] transition-[transform,opacity,box-shadow] duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[0_16px_30px_-14px_rgb(0_0_0/0.6)] active:translate-y-0 active:scale-[0.98]"
+                    className="focus-ring group mt-auto inline-flex cursor-pointer items-center gap-2 rounded-xl border border-foreground/8 bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
                   >
                     Get the pack
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
                   </a>
                 </div>
-              </motion.article>
+              </article>
             </FadeIn>
           ))}
         </div>
