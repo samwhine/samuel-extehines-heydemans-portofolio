@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 
 const EMAIL = "samuel.heydemanss@gmail.com";
-const INSTAGRAM = "https://instagram.com/samuelheydemans";
+const INSTAGRAM = "https://www.instagram.com/samuelheydemans";
 const WHATSAPP = "https://wa.me/6281317856465?text=Hi%20Sam%21%20I%27d%20like%20to%20discuss%20a%20project%20and%20learn%20more%20about%20your%20services.";
 
 const contactOptions = [

@@ -191,7 +191,7 @@ The palette is strict black and white. No accent or semantic color hues are used
 - 📧 [samuel.heydemanss@gmail.com](mailto:samuel.heydemanss@gmail.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/samuel-extehines-heydemans/)
 - 🎨 [Behance](https://www.behance.net/samuelheydemans)
-- 📷 [Instagram](https://instagram.com/samuelheydemans)
+- 📷 [Instagram](https://www.instagram.com/samuelheydemans)
 
 ---
 

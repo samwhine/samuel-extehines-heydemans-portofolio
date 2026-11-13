@@ -13,7 +13,7 @@ type SocialLink = {
 const LINKS: SocialLink[] = [
   {
     label: "Instagram",
-    href: "https://instagram.com/samuelheydemans",
+    href: "https://www.instagram.com/samuelheydemans",
     icon: Instagram,
   },
   {

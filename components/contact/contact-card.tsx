@@ -57,7 +57,7 @@ export function ContactCard(): ReactNode {
                     lucideIcon={Github}
                   />
                   <SocialIcon
-                    href="https://instagram.com/samuelheydemans"
+                    href="https://www.instagram.com/samuelheydemans"
                     label="Instagram"
                     lucideIcon={Instagram}
                   />
