@@ -4,7 +4,7 @@ export const siteConfig = {
   siteName: "Samuel Extehines Heydemans",
   name: "Samuel Extehines Heydemans — Co-founder, The House Works | Creative Technologist & Video Editor",
   description:
-    "Samuel Extehines Heydemans is the co-founder of The House Works, a creative technologist, and a video editor and creative staff member at Legacy ID.",
+    "Samuel Extehines Heydemans, also known as Samuel Heydemans and @samwhine, is the co-founder of The House Works, a creative technologist, and a video editor and creative staff member at Legacy ID.",
   url: "https://samuelheydemans.my.id",
   ogImage: "/og-image.png",
   creator: "@samuelheydemans",

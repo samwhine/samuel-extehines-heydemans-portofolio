@@ -22,7 +22,7 @@ export function Hero(): ReactNode {
               <span aria-hidden="true" className="mx-0.5">
                 👋
               </span>
-              , I&rsquo;m Samuel
+              , I&rsquo;m Samuel Heydemans
             </p>
 
             <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-foreground/50">
@@ -35,8 +35,9 @@ export function Hero(): ReactNode {
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-              I&rsquo;m Samuel, a co-founder, video editor, and technical builder working
-              across creative production, web products, and self-hosted systems.
+              Samuel Extehines Heydemans — also known online as @samwhine — is a
+              co-founder, video editor, and technical builder working across creative
+              production, web products, and self-hosted systems.
             </p>
 
             <HeroCtas />
