@@ -10,8 +10,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: "About Samuel Extehines Heydemans — Creative Technologist & Co-founder",
-  description: "Learn about Samuel Extehines Heydemans, co-founder of The House Works, creative technologist, video editor, and technical builder working across content, web products, and infrastructure.",
+  title: "About Samuel Heydemans",
+  description: "Learn about Samuel Extehines Heydemans, co-founder of The House Works, creative technologist, video editor, and technical builder.",
   path: "/about",
 });
 

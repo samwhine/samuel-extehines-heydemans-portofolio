@@ -8,9 +8,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: "Creative & Technical Work — Samuel Extehines Heydemans",
+  title: "Creative & Technical Work",
   description:
-    "Explore Samuel Extehines Heydemans' creative work in video editing, animation, music, and promotional content, alongside technical systems, web products, and self-hosted infrastructure.",
+    "Explore Samuel Heydemans' video editing, animation, promotional content, web products, and self-hosted technical systems.",
   path: "/projects",
 });
 

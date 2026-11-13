@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: "Shop — Digital Products by Samuel Extehines Heydemans",
+  title: "Digital Products Shop",
   description:
     "Shop Samuel Extehines Heydemans' ready-to-use CapCut text animation packs for sharper hooks, cleaner pacing, and more expressive short-form edits.",
   path: "/shop",

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   siteName: "Samuel Extehines Heydemans",
-  name: "Samuel Extehines Heydemans — Co-founder, The House Works | Creative Technologist & Video Editor",
+  name: "Samuel Heydemans — Creative Technologist & Video Editor",
   description:
-    "Samuel Extehines Heydemans, also known as Samuel Heydemans and @samwhine, is the co-founder of The House Works, a creative technologist, and a video editor and creative staff member at Legacy ID.",
+    "Samuel Heydemans, also known as Samuel Extehines Heydemans, is a creative technologist, video editor, and co-founder of The House Works.",
   url: "https://samuelheydemans.my.id",
   ogImage: "/og-image.png",
   creator: "@samuelheydemans",
@@ -52,7 +52,7 @@ export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s | Samuel Heydemans`,
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
