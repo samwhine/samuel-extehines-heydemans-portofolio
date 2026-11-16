@@ -35,9 +35,8 @@ export function Hero(): ReactNode {
             </h1>
 
             <p className="max-w-[34ch] text-[22px] leading-[1.4] tracking-tight text-foreground/65">
-              Samuel Extehines Heydemans — also known online as @samwhine — is a
-              co-founder, video editor, and technical builder working across creative
-              production, web products, and self-hosted systems.
+              I&rsquo;m Samuel, a co-founder, video editor, and technical builder working
+              across creative production, web products, and self-hosted systems.
             </p>
 
             <HeroCtas />
