@@ -1,7 +1,7 @@
 {
   "id": "/",
   "name": "Samuel Extehines Heydemans — Creative Technologist",
-  "short_name": "Samuel Heydemans",
+  "short_name": "Samuel Extehines Heydemans",
   "description": "Portfolio of Samuel Extehines Heydemans — Co-founder of The House Works, Creative Technologist, and Video Editor working across creative production, web products, and self-hosted systems.",
   "lang": "en",
   "dir": "ltr",
@@ -39,7 +39,7 @@
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "About Samuel",
+      "name": "About Samuel Extehines Heydemans",
       "short_name": "About",
       "url": "/about",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]

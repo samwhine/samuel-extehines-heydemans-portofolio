@@ -93,7 +93,6 @@ Open <http://localhost:3000> in your browser.
 │   ├── layout.tsx                   # Root layout with providers, nav, backdrop
 │   ├── page.tsx                     # Home page
 │   ├── robots.ts                    # Dynamic robots.txt
-│   ├── sitemap.ts                   # Dynamic sitemap
 │   ├── icon.svg                     # Favicon
 │   └── apple-icon.svg               # Apple touch icon
 ├── components/

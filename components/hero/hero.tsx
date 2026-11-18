@@ -22,7 +22,7 @@ export function Hero(): ReactNode {
               <span aria-hidden="true" className="mx-0.5">
                 👋
               </span>
-              , I&rsquo;m Samuel Heydemans
+              , I&rsquo;m Samuel Extehines Heydemans
             </p>
 
             <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-foreground/50">
